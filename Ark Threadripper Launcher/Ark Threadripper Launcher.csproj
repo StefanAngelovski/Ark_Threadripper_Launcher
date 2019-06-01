@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD998DA7-24FC-4938-93D6-18A51137C614}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Ark_Threadripper_Launcher</RootNamespace>
+    <AssemblyName>ArkThreadripperLauncher</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>C:\Users\marij\Desktop\Blabla\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Threadripper Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>none</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <Optimize>true</Optimize>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Design">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Error.Designer.cs">
+      <DependentUpon>Error.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotifyPropertyChangedInvocatorAttribute.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="ServerQuery.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cache.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cache.Designer.cs">
+      <DependentUpon>Cache.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainClass.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ModsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ModsWindow.xaml.cs">
+      <DependentUpon>ModsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Cache.resx">
+      <DependentUpon>Cache.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Error.resx">
+      <DependentUpon>Error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Threadripper Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Threadripper Head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ScorchedEarth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARK_Aberration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARK_ScorchedEarth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARK_Extinction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARK_Ragnarok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARK_Island.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ARK_Center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DefaultBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TheIsland.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Ragnarok.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Center.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Aberration.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Extinction.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Gradient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Steam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\StructuresPlus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Wardrobe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Castles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PimpMyHome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DominationRex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SeniorClass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MythicalCreatures.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MysteriousMysteries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Naturalism2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SmallIslands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TransparentGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\5Star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BackgroundMod.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\4Star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SOTF.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SmallIslands1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DiscordIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autoupdater.NET.Official">
+      <Version>1.5.2</Version>
+    </PackageReference>
+    <PackageReference Include="CefSharp.Wpf">
+      <Version>73.1.130</Version>
+    </PackageReference>
+    <PackageReference Include="Costura.Fody">
+      <Version>4.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Threadripper Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ServerRates.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
