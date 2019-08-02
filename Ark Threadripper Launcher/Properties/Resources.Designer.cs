@@ -153,6 +153,16 @@ namespace Ark_Threadripper_Launcher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ARK_Valguero {
+            get {
+                object obj = ResourceManager.GetObject("ARK_Valguero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BackgroundMod {
             get {
                 object obj = ResourceManager.GetObject("BackgroundMod", resourceCulture);
@@ -213,16 +223,6 @@ namespace Ark_Threadripper_Launcher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Down {
-            get {
-                object obj = ResourceManager.GetObject("Down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Extinction {
             get {
                 object obj = ResourceManager.GetObject("Extinction", resourceCulture);
@@ -236,6 +236,16 @@ namespace Ark_Threadripper_Launcher.Properties {
         internal static System.Drawing.Bitmap Gradient {
             get {
                 object obj = ResourceManager.GetObject("Gradient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hexagon {
+            get {
+                object obj = ResourceManager.GetObject("Hexagon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,16 +316,6 @@ namespace Ark_Threadripper_Launcher.Properties {
         internal static System.Drawing.Bitmap SeniorClass {
             get {
                 object obj = ResourceManager.GetObject("SeniorClass", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ServerRates {
-            get {
-                object obj = ResourceManager.GetObject("ServerRates", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,6 +403,16 @@ namespace Ark_Threadripper_Launcher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Threadripper_Head_Selected {
+            get {
+                object obj = ResourceManager.GetObject("Threadripper_Head_Selected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TransparentGray {
             get {
                 object obj = ResourceManager.GetObject("TransparentGray", resourceCulture);
@@ -413,9 +423,9 @@ namespace Ark_Threadripper_Launcher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Up {
+        internal static System.Drawing.Bitmap Valguero {
             get {
-                object obj = ResourceManager.GetObject("Up", resourceCulture);
+                object obj = ResourceManager.GetObject("Valguero", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

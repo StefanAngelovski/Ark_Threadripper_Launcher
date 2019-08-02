@@ -77,9 +77,8 @@ namespace Ark_Threadripper_Launcher
         }
         private void Cache_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // your code here to do something before closing the form
-        }
 
+        }
         private void Cache_FormClosing(object sender, FormClosingEventArgs e)
         {
 

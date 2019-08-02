@@ -9,10 +9,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using MahApps.Metro.Controls;
+using MahApps.Metro;
+using System.Windows.Media;
+using System.Windows.Media.Effects;
 
 namespace Ark_Threadripper_Launcher
 {
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : MetroWindow, INotifyPropertyChanged
 
     {
         public MainWindow()
@@ -20,25 +24,245 @@ namespace Ark_Threadripper_Launcher
             InitializeComponent();
             bool check = AutoUpdateCheck.IsChecked.GetValueOrDefault(false);
             AutoUpdateCheck.IsChecked = Settings.Default.CheckBox;
+
+            ((App)Application.Current).WindowPlace.Register(this);
+
             if (AutoUpdate == true)
+            {
                 AutoUpdater.Start("https://www.dropbox.com/s/rdkn2ie547cs9kr/UpdateData.xml?dl=1");
+            }
+            if (buttonPressed2 > 1)
+            {
+                buttonPressed2 = Settings.Default.buttonPressed2 - 1;
+            }
+            if (buttonPressed2 == 1)
+            {
+                buttonPressed2 = Settings.Default.buttonPressed2;
+            }
+            if (buttonPressed2 < 1)
+            {
+                buttonPressed2 = 1;
+            }
+            if (buttonPressed2 == 1)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Red"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = Brushes.Red;
+                MainPlayButton.Background = Brushes.Red;
+                return;
+            }
+            if (buttonPressed2 == 2)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Green"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#548E19")); ;
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#548E19")); ;
+                return;
+            }
+            if (buttonPressed2 == 3)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Blue"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1585B5"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1585B5"));
+                return;
+            }
+            if (buttonPressed2 == 4)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Purple"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#574EB9"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#574EB9"));
+                return;
+            }
+            if (buttonPressed2 == 5)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Orange"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CF5A07"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CF5A07"));
+                return;
+            }
+            if (buttonPressed2 == 6)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Lime"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8AA407"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8AA407"));
+                return;
+            }
+            if (buttonPressed2 == 7)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Emerald"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#077507"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#077507"));
+                return;
+            }
+            if (buttonPressed2 == 8)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Teal"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#07908E"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#07908E"));
+                return;
+            }
+            if (buttonPressed2 == 9)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Cyan"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1D88BC"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1D88BC"));
+                return;
+            }
+            if (buttonPressed2 == 10)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Cobalt"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#0747C6"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#0747C6"));
+                return;
+            }
+            if (buttonPressed2 == 11)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Indigo"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5C07D3"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5C07D3"));
+                return;
+            }
+            if (buttonPressed2 == 12)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Violet"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8F07D3"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8F07D3"));
+                return;
+            }
+            if (buttonPressed2 == 13)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Pink"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CA62AD"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CA62AD"));
+                return;
+            }
+            if (buttonPressed2 == 14)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Magenta"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#B40763"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#B40763"));
+                return;
+            }
+            if (buttonPressed2 == 15)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Crimson"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#890725"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#890725"));
+                return;
+            }
+            if (buttonPressed2 == 16)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Amber"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#C7890F"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#C7890F"));
+                return;
+            }
+            if (buttonPressed2 == 17)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Yellow"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#D2B90C"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#D2B90C"));
+                return;
+            }
+            if (buttonPressed2 == 18)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Brown"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#6F4F2A"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#6F4F2A"));
+                return;
+            }
+            if (buttonPressed2 == 19)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Olive"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5E7357"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5E7357"));
+                return;
+            }
+            if (buttonPressed2 == 20)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Steel"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#576573"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#576573"));
+                return;
+            }
+            if (buttonPressed2 == 21)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Mauve"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#655475"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#655475"));
+                return;
+            }
+            if (buttonPressed2 == 22)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Taupe"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#736845"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#736845"));
+                return;
+            }
+            if (buttonPressed2 == 23)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Sienna"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#87492B"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#87492B"));
+                return;
+            }
         }
         bool buttonPressed = false;
+        bool buttonPressed1 = false;
+        int buttonPressed2 = Properties.Settings.Default.buttonPressed2 - 1;
+        bool buttonPressed3 = false;
         bool AutoUpdate = false;
+        public string NewURL { get; set; }
         public string Link { get; set; }
         public static string TextDir { get; set; }
-
         private void Button_Click(object sender, RoutedEventArgs e) //Play Button
         {
             Launcher.LaunchWebsite(Link);
         }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e) ///Scorched Earth
-        {
-            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/ScorchedEarth.png", UriKind.Absolute));
-            Link = "steam://connect/yukitsuki.com:27017";
-        }
-
         private void Button_Click_3(object sender, RoutedEventArgs e) //Screenshots
         {
             try
@@ -62,12 +286,13 @@ namespace Ark_Threadripper_Launcher
                 }
                 catch (Exception)
                 {
+                    Application.Current.MainWindow.Effect = new BlurEffect();
                     Error f3 = new Error();
                     f3.ShowDialog();
+                    Application.Current.MainWindow.Effect = null;
                 }
             }
         }
-
 
         private void Button_Click_4(object sender, RoutedEventArgs e) ///Website Button
         {
@@ -76,15 +301,18 @@ namespace Ark_Threadripper_Launcher
 
         private void Button_Click_5(object sender, RoutedEventArgs e) //Mods
         {
+            Application.Current.MainWindow.Effect = new BlurEffect();
             ModsWindow f3 = new ModsWindow();
             f3.ShowDialog();
+            Application.Current.MainWindow.Effect = null;
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e) //Clear Cache
         {
-            GrayTransparent.Visibility = Visibility.Visible;
+            Application.Current.MainWindow.Effect = new BlurEffect();
             Cache f2 = new Cache();
             f2.ShowDialog();
+            Application.Current.MainWindow.Effect = null;
         }
 
         private void Button_Click_7(object sender, RoutedEventArgs e) //Center
@@ -93,10 +321,15 @@ namespace Ark_Threadripper_Launcher
             Link = "steam://connect/yukitsuki.com:27016";
         }
 
-        private void Button_Click_8(object sender, RoutedEventArgs e) ///Island Left Click
+        private void Button_Click_8(object sender, RoutedEventArgs e) ///Island
         {
             Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/TheIsland.jpg", UriKind.Absolute));
             Link = "steam://connect/yukitsuki.com:27015";
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e) ///Scorched Earth
+        {
+            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/ScorchedEarth.png", UriKind.Absolute));
+            Link = "steam://connect/yukitsuki.com:27017";
         }
 
         private void Button_Click_9(object sender, RoutedEventArgs e) ///Ragnarok
@@ -122,6 +355,14 @@ namespace Ark_Threadripper_Launcher
             Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/SmallIslands1.jpg", UriKind.Absolute));
             Link = "steam://connect/yukitsuki.com:27019";
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e) //Valguero
+        {
+            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/Valguero.jpg", UriKind.Absolute));
+            Link = "steam://connect/yukitsuki.com:27025";
+        }
+
+
         private void Button_Click_12(object sender, RoutedEventArgs e) //Update
         {
             AutoUpdater.Start("https://www.dropbox.com/s/rdkn2ie547cs9kr/UpdateData.xml?dl=1");
@@ -217,20 +458,333 @@ namespace Ark_Threadripper_Launcher
         }
         private void ServerRates(object sender, RoutedEventArgs e)
         {
-            if (!buttonPressed)
+            if (!buttonPressed1)
             {
                 ScrollRates.Visibility = Visibility.Visible;
                 ScrollBackground.Visibility = Visibility.Visible;
                 ServerRatesExit.Visibility = Visibility.Visible;
-                buttonPressed = true;
+                buttonPressed1 = true;
             }
             else
             {
                 ScrollRates.Visibility = Visibility.Collapsed;
                 ScrollBackground.Visibility = Visibility.Collapsed;
                 ServerRatesExit.Visibility = Visibility.Collapsed;
-                buttonPressed = false;
+                buttonPressed1 = false;
             }
+        }
+        private void Button_Click_15(object sender, RoutedEventArgs e) //ListDown
+        {
+            if (!buttonPressed3)
+            {
+                DownList.Visibility = Visibility.Visible;
+                buttonPressed3 = true;
+            }
+            else
+            {
+                DownList.Visibility = Visibility.Collapsed;
+                buttonPressed3 = false;
+            }
+        }
+        private void Button_Click_19(object sender, RoutedEventArgs e) //Color Menu
+        {
+            if (buttonPressed2 == 1)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Red"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                buttonPressed2 = 2;
+                AutoUpdateCheck.Foreground = Brushes.Red;
+                MainPlayButton.Background = Brushes.Red;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 2)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Green"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                buttonPressed2 = 3;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#548E19")); ;
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#548E19")); ;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 3)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Blue"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1585B5"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1585B5"));
+                buttonPressed2 = 4;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 4)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Purple"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#574EB9"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#574EB9"));
+                buttonPressed2 = 5;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 5)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Orange"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CF5A07"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CF5A07"));
+                buttonPressed2 = 6;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 6)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Lime"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8AA407"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8AA407"));
+                buttonPressed2 = 7;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 7)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Emerald"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#077507"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#077507"));
+                buttonPressed2 = 8;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 8)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Teal"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#07908E"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#07908E"));
+                buttonPressed2 = 9;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 9)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Cyan"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1D88BC"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1D88BC"));
+                buttonPressed2 = 10;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 10)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Cobalt"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#0747C6"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#0747C6"));
+                buttonPressed2 = 11;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 11)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Indigo"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5C07D3"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5C07D3"));
+                buttonPressed2 = 12;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 12)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Violet"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8F07D3"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8F07D3"));
+                buttonPressed2 = 13;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 13)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Pink"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CA62AD"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CA62AD"));
+                buttonPressed2 = 14;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 14)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Magenta"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#B40763"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#B40763"));
+                buttonPressed2 = 15;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 15)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Crimson"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#890725"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#890725"));
+                buttonPressed2 = 16;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 16)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Amber"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#C7890F"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#C7890F"));
+                buttonPressed2 = 17;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 17)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Yellow"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#D2B90C"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#D2B90C"));
+                buttonPressed2 = 18;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 18)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Brown"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#6F4F2A"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#6F4F2A"));
+                buttonPressed2 = 19;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 19)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Olive"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5E7357"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5E7357"));
+                buttonPressed2 = 20;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 20)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Steel"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#576573"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#576573"));
+                buttonPressed2 = 21;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 21)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Mauve"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#655475"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#655475"));
+                buttonPressed2 = 22;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 22)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Taupe"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#736845"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#736845"));
+                buttonPressed2 = 23;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+            if (buttonPressed2 == 23)
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                             ThemeManager.GetAccent("Sienna"),
+                                             ThemeManager.GetAppTheme("BaseDark")); ;
+                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#87492B"));
+                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#87492B"));
+                buttonPressed2 = 1;
+                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+                Properties.Settings.Default.Save();
+                return;
+            }
+        }
+
+        private void Button_Click_16(object sender, RoutedEventArgs e) //LoginAndRegister
+        {
+            Launcher.LaunchWebsite("http://yukitsuki.com/?p=login");
+            buttonPressed3 = false;
+            DownList.Visibility = Visibility.Collapsed;
+        }
+
+        private void Button_Click_17(object sender, RoutedEventArgs e) //Help
+        {
+            Launcher.LaunchWebsite("http://yukitsuki.com/?p=forum&sf=92");
+            buttonPressed3 = false;
+            DownList.Visibility = Visibility.Collapsed;
+        }
+
+        private void Button_Click_18(object sender, RoutedEventArgs e)//Forum
+        {
+            Launcher.LaunchWebsite("http://yukitsuki.com/?p=forum");
+            buttonPressed3 = false;
+            DownList.Visibility = Visibility.Collapsed;
         }
 
         private void ServerRatesExit_Click(object sender, RoutedEventArgs e)
@@ -239,20 +793,5 @@ namespace Ark_Threadripper_Launcher
             ScrollBackground.Visibility = Visibility.Collapsed;
             ServerRatesExit.Visibility = Visibility.Collapsed;
         }
-        public class Example
-        {
-            public static void ExitBackground(object sender, RoutedEventArgs e)
-            {
-                
-            }
-        }
-        //private void MoveUp(object sender, RoutedEventArgs e)
-        //{
-        //Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/SOTF.jpg", UriKind.Absolute));
-        //}
-        //private void MoveDown(object sender, RoutedEventArgs e)
-        //{
-        //Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/SOTF.jpg", UriKind.Absolute));
-        //}
     }
 }

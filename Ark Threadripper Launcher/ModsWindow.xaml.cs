@@ -1,12 +1,14 @@
 ﻿using System.Diagnostics;
 using System.Windows;
+using MahApps.Metro.Controls;
+using MahApps.Metro;
 
 namespace Ark_Threadripper_Launcher
 {
     /// <summary>
     /// Interaction logic for ModsWindow.xaml
     /// </summary>
-    public partial class ModsWindow : Window
+    public partial class ModsWindow : MetroWindow
     {
         public ModsWindow()
         {

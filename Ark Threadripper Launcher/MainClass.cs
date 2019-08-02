@@ -1,6 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
+﻿using System.Diagnostics;
 
 namespace Ark_Threadripper_Launcher
 {
@@ -11,4 +9,5 @@ namespace Ark_Threadripper_Launcher
             Process.Start(url);
         }
     }
+
 }

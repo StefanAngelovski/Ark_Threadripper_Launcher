@@ -56,12 +56,27 @@ namespace Ark_Threadripper_Launcher.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool TransparentGray {
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int GrayValue {
             get {
-                return ((bool)(this["TransparentGray"]));
+                return ((int)(this["GrayValue"]));
+            }
+            set {
+                this["GrayValue"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int buttonPressed2 {
+            get {
+                return ((int)(this["buttonPressed2"]));
+            }
+            set {
+                this["buttonPressed2"] = value;
             }
         }
     }
