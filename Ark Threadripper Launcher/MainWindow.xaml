@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         x:Class="Ark_Threadripper_Launcher.MainWindow"
-        MinHeight="621"
-        MinWidth="1094"
-        mc:Ignorable="d" Height="621" Width="1094" ResizeMode="CanResize">
+       Title="Ark Threadripper Launcher" Height="621" Width="1091"
+    MinHeight="621"
+    MinWidth="1091">
 
     <Window.Resources>
         <SolidColorBrush x:Key="HighlightBrush" Color="#FF6C6C6C" />
@@ -433,10 +434,7 @@
         <DropShadowEffect/>
     </Window.Effect>
 
-
-    <Grid Margin="0,0,-6,0" Background="Black">
-        <Grid.RowDefinitions>
-        </Grid.RowDefinitions>
+    <Grid Margin="0,0,-6,0" fw:PointerTracker.Enabled="True" Background="Black">
         <Image x:Name="Background" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/DefaultBackground.jpg" OpacityMask="Black" Margin="203,0,-2,90" Stretch="UniformToFill"/>
         <Rectangle Fill="#FF191919" Stroke="#FF191919" Grid.RowSpan="8" HorizontalAlignment="Left" Width="203" Margin="0,0,0,-0.438"/>
         <Rectangle Fill="#FF141414" Stroke="#FF141414" RenderTransformOrigin="0.501,1.52" Grid.Row="4" Grid.ColumnSpan="3" Margin="0,0,0,-1" Grid.RowSpan="4" Height="91" VerticalAlignment="Bottom">
@@ -719,5 +717,16 @@
         <Rectangle Fill="#FF535353" HorizontalAlignment="Left" Height="5" Margin="-2,244,0,0" Stroke="Black" VerticalAlignment="Top" Width="65"/>
         <Rectangle Fill="#FF535353" HorizontalAlignment="Left" Height="5" Margin="142,244,0,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
         <Label Content="Non-Canon" HorizontalAlignment="Left" Margin="68,233,0,0" VerticalAlignment="Top" FontFamily="Impact" FontSize="14" Height="28" Width="73"/>
+        <Label Content="Server Availability: Online" HorizontalAlignment="Left" Margin="13,0,0,44" Height="26" VerticalAlignment="Bottom"/>
+        <Rectangle Fill="#FFB8B8FF" Opacity="0.50" Margin="0,-72,-344,-278" Stroke="#00000000" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="918">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="23.794"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
     </Grid>
 </Controls:MetroWindow>
