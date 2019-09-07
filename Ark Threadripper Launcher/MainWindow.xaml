@@ -8,15 +8,15 @@
         xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         x:Class="Ark_Threadripper_Launcher.MainWindow"
        Title="Ark Threadripper Launcher" Height="621" Width="1091"
-    MinHeight="621"
-    MinWidth="1091">
+       MinHeight="621"
+       MinWidth="1092">
 
     <Window.Resources>
         <SolidColorBrush x:Key="HighlightBrush" Color="#FF6C6C6C" />
         <SolidColorBrush x:Key="HighlightBrush1" Color="#0d48a8" />
         <SolidColorBrush x:Key="HighlightBrush2" Color="#0d48a8" />
         <SolidColorBrush x:Key="HighlightBrush3" Color="#FF6C6A6A" Opacity=".10"/>
-        <SolidColorBrush x:Key="HighlightBrush4" Color="#FF626872" Opacity=".30"/>
+        <SolidColorBrush x:Key="HighlightBrush4" Color="#44626872" Opacity=".99"/>
         <Style TargetType="{x:Type MenuItem}" x:Key="MenuItemStyle" >
             <Setter Property="BorderBrush" Value="White"></Setter>
             <Setter Property="BorderThickness" Value="0,0,0,1"></Setter>
@@ -352,9 +352,9 @@
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
                                 <Setter TargetName="buttonBorder" Property="Background"
-                                            Value="{DynamicResource HighlightBrush3}" />
+                                            Value="{DynamicResource HighlightBrush4}" />
                                 <Setter TargetName="buttonBorder" Property="BorderBrush"
-                                            Value="{DynamicResource HightlightBrush3}" />
+                                            Value="{DynamicResource HightlightBrush4}" />
                                 <Setter Property="Foreground" Value="{DynamicResource Font.Color.Norm}" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
@@ -435,9 +435,12 @@
     </Window.Effect>
 
     <Grid Margin="0,0,-6,0" fw:PointerTracker.Enabled="True" Background="Black">
-        <Image x:Name="Background" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/DefaultBackground.jpg" OpacityMask="Black" Margin="203,0,-2,90" Stretch="UniformToFill"/>
-        <Rectangle Fill="#FF191919" Stroke="#FF191919" Grid.RowSpan="8" HorizontalAlignment="Left" Width="203" Margin="0,0,0,-0.438"/>
-        <Rectangle Fill="#FF141414" Stroke="#FF141414" RenderTransformOrigin="0.501,1.52" Grid.Row="4" Grid.ColumnSpan="3" Margin="0,0,0,-1" Grid.RowSpan="4" Height="91" VerticalAlignment="Bottom">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Image x:Name="Background" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/DefaultBackground.png" OpacityMask="Black" Margin="203,0,-2,90" Stretch="UniformToFill"/>
+        <Rectangle fw:AcrylicWindow.Enabled="True" Fill="#FF191919" Stroke="#FF191919" HorizontalAlignment="Left" Width="203"/>
+        <Rectangle Fill="#FF141414" Stroke="#FF141414" RenderTransformOrigin="0.501,1.52" Margin="0,0,0,-1" Height="91" VerticalAlignment="Bottom">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -447,19 +450,19 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Button x:Name="MainPlayButton" Style="{StaticResource Button.Style.Second}" Content="PLAY" Margin="0,0,18,19" FontFamily="Segoe UI Semibold" FontSize="24" Background="#FF077507" UseLayoutRounding="True" RenderTransformOrigin="0.5,0.5" Grid.Row="6" Foreground="White" Padding="1" BorderBrush="#FFE97902" Click="Button_Click" Height="51" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="183"/>
+        <Button x:Name="MainPlayButton" Style="{StaticResource Button.Style.Second}" Content="PLAY" Margin="0,0,18,19" FontFamily="Segoe UI Semibold" FontSize="24" Background="#FF077507" UseLayoutRounding="True" RenderTransformOrigin="0.5,0.5" Foreground="White" Padding="1" BorderBrush="#FFE97902" Click="Button_Click" Height="51" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="183"/>
         <Image Source="Resources/Threadripper Head.png" Stretch="Fill" HorizontalAlignment="Left" Width="180" Height="63" VerticalAlignment="Top"/>
         <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Island.png" Margin="12,64,0,0" HorizontalAlignment="Left" Width="48" Height="37" VerticalAlignment="Top"/>
-        <RadioButton Content="TheIsland" Style="{StaticResource Button.Style.Third}" Margin="0,63,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_8" Checked="ToggleButton_Checked_1" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
-            <RadioButton.Background>
+        <Button Content="TheIsland" Style="{StaticResource ButtonRevealStyle}" Margin="0,63,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_8" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
+            <Button.Background>
                 <ImageBrush/>
-            </RadioButton.Background>
-            <RadioButton.ContextMenu>
+            </Button.Background>
+            <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
                 </ContextMenu>
-            </RadioButton.ContextMenu>
-            <RadioButton.Triggers>
+            </Button.ContextMenu>
+            <Button.Triggers>
                 <EventTrigger RoutedEvent="ToggleButton.Checked">
                     <BeginStoryboard>
                         <Storyboard AutoReverse="False">
@@ -470,19 +473,19 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
-            </RadioButton.Triggers>
-        </RadioButton>
+            </Button.Triggers>
+        </Button>
         <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_ScorchedEarth.png" Margin="14,105,0,0" IsEnabled="False" RenderTransformOrigin="0.715,0.981" HorizontalAlignment="Left" Width="46" Height="42" VerticalAlignment="Top"/>
-        <RadioButton Style="{StaticResource Button.Style.Third}" Content="Scorched Earth" Margin="0,103,0,0" BorderBrush="#FF191919" Foreground="White" Click="Button_Click_1" FontSize="14" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
-            <RadioButton.ContextMenu>
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="Scorched Earth" Margin="0,103,0,0" BorderBrush="#FF191919" Foreground="White" Click="Button_Click_1" FontSize="14" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
+            <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
                 </ContextMenu>
-            </RadioButton.ContextMenu>
-            <RadioButton.Background>
+            </Button.ContextMenu>
+            <Button.Background>
                 <ImageBrush/>
-            </RadioButton.Background>
-            <RadioButton.Triggers>
+            </Button.Background>
+            <Button.Triggers>
                 <EventTrigger RoutedEvent="ToggleButton.Checked">
                     <BeginStoryboard>
                         <Storyboard AutoReverse="False">
@@ -493,19 +496,19 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
-            </RadioButton.Triggers>
-        </RadioButton>
+            </Button.Triggers>
+        </Button>
         <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Aberration.png" Margin="14,145,0,0" Height="44" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45"/>
-        <RadioButton Style="{StaticResource Button.Style.Third}" Content="Aberration" Margin="0,143,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" MinHeight="3" Click="Button_Click_11" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
-            <RadioButton.ContextMenu>
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="Aberration" Margin="0,143,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" MinHeight="3" Click="Button_Click_11" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
+            <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
                 </ContextMenu>
-            </RadioButton.ContextMenu>
-            <RadioButton.Background>
+            </Button.ContextMenu>
+            <Button.Background>
                 <ImageBrush/>
-            </RadioButton.Background>
-            <RadioButton.Triggers>
+            </Button.Background>
+            <Button.Triggers>
                 <EventTrigger RoutedEvent="ToggleButton.Checked">
                     <BeginStoryboard>
                         <Storyboard AutoReverse="False">
@@ -516,19 +519,19 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
-            </RadioButton.Triggers>
-        </RadioButton>
+            </Button.Triggers>
+        </Button>
         <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Extinction.png" Margin="10,182,0,0" HorizontalAlignment="Left" Width="50" Height="51" VerticalAlignment="Top"/>
-        <RadioButton Style="{StaticResource Button.Style.Third}" Content="Extinction" Margin="0,183,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_10" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
-            <RadioButton.ContextMenu>
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="Extinction" Margin="0,183,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_10" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
+            <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
                 </ContextMenu>
-            </RadioButton.ContextMenu>
-            <RadioButton.Background>
+            </Button.ContextMenu>
+            <Button.Background>
                 <ImageBrush/>
-            </RadioButton.Background>
-            <RadioButton.Triggers>
+            </Button.Background>
+            <Button.Triggers>
                 <EventTrigger RoutedEvent="ToggleButton.Checked">
                     <BeginStoryboard>
                         <Storyboard AutoReverse="False">
@@ -539,19 +542,19 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
-            </RadioButton.Triggers>
-        </RadioButton>
+            </Button.Triggers>
+        </Button>
         <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Ragnarok.png" Margin="13,306,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="46" Height="48" VerticalAlignment="Top"/>
-        <RadioButton Style="{StaticResource Button.Style.Third}" Content="Ragnarok" Margin="0,306,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_9" RenderTransformOrigin="0.497,1.154" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
-            <RadioButton.ContextMenu>
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="Ragnarok" Margin="0,306,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_9" RenderTransformOrigin="0.497,1.154" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
+            <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
                 </ContextMenu>
-            </RadioButton.ContextMenu>
-            <RadioButton.Background>
+            </Button.ContextMenu>
+            <Button.Background>
                 <ImageBrush/>
-            </RadioButton.Background>
-            <RadioButton.Triggers>
+            </Button.Background>
+            <Button.Triggers>
                 <EventTrigger RoutedEvent="ToggleButton.Checked">
                     <BeginStoryboard>
                         <Storyboard AutoReverse="False">
@@ -562,19 +565,19 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
-            </RadioButton.Triggers>
-        </RadioButton>
+            </Button.Triggers>
+        </Button>
         <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Center.png" Margin="-13,250,0,0" HorizontalAlignment="Left" Width="96" Height="77" VerticalAlignment="Top" Stretch="Fill"/>
-        <RadioButton Style="{StaticResource Button.Style.Third}" Content="The Center" Margin="0,266,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_7" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
-            <RadioButton.ContextMenu>
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="The Center" Margin="0,266,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_7" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
+            <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
                 </ContextMenu>
-            </RadioButton.ContextMenu>
-            <RadioButton.Background>
+            </Button.ContextMenu>
+            <Button.Background>
                 <ImageBrush/>
-            </RadioButton.Background>
-            <RadioButton.Triggers>
+            </Button.Background>
+            <Button.Triggers>
                 <EventTrigger RoutedEvent="ToggleButton.Checked">
                     <BeginStoryboard>
                         <Storyboard AutoReverse="False">
@@ -585,34 +588,34 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
-            </RadioButton.Triggers>
-        </RadioButton>
+            </Button.Triggers>
+        </Button>
         <Rectangle Fill="#FF1E1E1E" Margin="0,0,512,30" Stroke="#FF141414" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="4"/>
-        <Button Style="{StaticResource Button.Style.First}" Content="Mods" Margin="0,0,518,33" Background="#FF141414" BorderBrush="#FF141414" Foreground="White" FontSize="16" Height="27" VerticalAlignment="Bottom" Click="Button_Click_5" ToolTip="List current server mods" ToolTipService.ShowDuration="2000" HorizontalAlignment="Right" Width="86"/>
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="Mods" Margin="0,0,518,33" Background="#FF141414" BorderBrush="#FF141414" Foreground="White" FontSize="16" Height="27" VerticalAlignment="Bottom" Click="Button_Click_5" ToolTip="List current server mods" ToolTipService.ShowDuration="2000" HorizontalAlignment="Right" Width="86"/>
         <Rectangle Fill="#FF1E1E1E" Margin="0,0,603,30" Stroke="#FF141414" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="4"/>
-        <Button Style="{StaticResource Button.Style.First}" Content="Screenshots" Margin="0,0,609,33" Background="#FF141414" BorderBrush="#FF141414" Foreground="White" FontSize="16" Height="27" VerticalAlignment="Bottom" Click="Button_Click_3" ToolTip="Open screenshots folder" ToolTipService.ShowDuration="2000" HorizontalAlignment="Right" Width="98"/>
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="Screenshots" Margin="0,0,609,33" Background="#FF141414" BorderBrush="#FF141414" Foreground="White" FontSize="16" Height="27" VerticalAlignment="Bottom" Click="Button_Click_3" ToolTip="Open screenshots folder" ToolTipService.ShowDuration="2000" HorizontalAlignment="Right" Width="98"/>
         <Rectangle Fill="#FF1E1E1E" Margin="0,0,710,30" Stroke="#FF141414" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="4"/>
-        <Button Style="{StaticResource Button.Style.First}" Content="Clear Cache" Margin="0,0,414,33" Background="#FF141414" BorderBrush="#FF141414" Foreground="White" FontSize="16" Height="27" VerticalAlignment="Bottom" Click="Button_Click_6" ToolTip="Delete junk files" ToolTipService.ShowDuration="2000" HorizontalAlignment="Right" Width="98"/>
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="Clear Cache" Margin="0,0,414,33" Background="#FF141414" BorderBrush="#FF141414" Foreground="White" FontSize="16" Height="27" VerticalAlignment="Bottom" Click="Button_Click_6" ToolTip="Delete junk files" ToolTipService.ShowDuration="2000" HorizontalAlignment="Right" Width="98"/>
         <Rectangle Fill="#FF1E1E1E" Margin="0,0,405,30" Stroke="#FF141414" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="4"/>
-        <Button Style="{StaticResource Button.Style.First}" Content="Visit Website" Margin="0,0,295,33" Background="#FF141414" BorderBrush="#FF141414" Foreground="White" FontSize="16" Height="27" VerticalAlignment="Bottom" Click="Button_Click_4" ToolTip="Opens the official website" ToolTipService.ShowDuration="2000" HorizontalAlignment="Right" Width="105"/>
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="Visit Website" Margin="0,0,295,33" Background="#FF141414" BorderBrush="#FF141414" Foreground="White" FontSize="16" Height="27" VerticalAlignment="Bottom" Click="Button_Click_4" ToolTip="Opens the official website" ToolTipService.ShowDuration="2000" HorizontalAlignment="Right" Width="105"/>
         <Rectangle Fill="#FF1E1E1E" HorizontalAlignment="Right" Margin="0,0,286,30" Stroke="#FF141414" Width="4" Height="38" VerticalAlignment="Bottom"/>
-        <Button Style="{StaticResource Button.Style.First}" Content="Update" Margin="0,0,222,33" VerticalAlignment="Bottom" Height="27" Background="#FF141414" BorderBrush="#FF141414" Foreground="White" FontSize="16" Click="Button_Click_12" ToolTip="Manually check for updates" ToolTipService.ShowDuration="2000" HorizontalAlignment="Right" Width="59"/>
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="Update" Margin="0,0,222,33" VerticalAlignment="Bottom" Height="27" Background="#FF141414" BorderBrush="#FF141414" Foreground="White" FontSize="16" Click="Button_Click_12" ToolTip="Manually check for updates" ToolTipService.ShowDuration="2000" HorizontalAlignment="Right" Width="59"/>
         <Image Source="Resources/gradient.png" Stretch="Fill" Height="59" VerticalAlignment="Top" Margin="203,0,0,0"/>
-        <ToggleButton Style="{StaticResource Button.Style.Fifth}" Content="..." Margin="181,0,0,0" Click="Button_Click_13" Checked="Button_Click_14" Foreground="White" BorderBrush="#FF999999" HorizontalAlignment="Left" Width="23" Height="28" VerticalAlignment="Top">
-            <ToggleButton.Background>
+        <Button Style="{StaticResource Button.Style.Forth}" Content="..." Margin="181,0,0,0" Click="Button_Click_13" Foreground="White" BorderBrush="#FF999999" HorizontalAlignment="Left" Width="23" Height="28" VerticalAlignment="Top">
+            <Button.Background>
                 <ImageBrush/>
-            </ToggleButton.Background>
-        </ToggleButton>
-        <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="No Tame" Margin="0,0,0,130" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="ToggleButton_Checked_10" Checked="ToggleButton_Checked_10" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Bottom">
-            <RadioButton.ContextMenu>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="No Tame" Margin="0,0,0,130" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="ToggleButton_Checked_10" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Bottom">
+            <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
                 </ContextMenu>
-            </RadioButton.ContextMenu>
-            <RadioButton.Background>
+            </Button.ContextMenu>
+            <Button.Background>
                 <ImageBrush/>
-            </RadioButton.Background>
-            <RadioButton.Triggers>
+            </Button.Background>
+            <Button.Triggers>
                 <EventTrigger RoutedEvent="ToggleButton.Checked">
                     <BeginStoryboard>
                         <Storyboard AutoReverse="False">
@@ -623,18 +626,18 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
-            </RadioButton.Triggers>
-        </RadioButton>
-        <RadioButton Style="{StaticResource {x:Type ToggleButton}}" Content="Small Islands" Margin="1,0,0,90" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="ToggleButton_Checked_1" Checked="ToggleButton_Checked_1" HorizontalAlignment="Left" Width="203" Height="40" VerticalAlignment="Bottom">
-            <RadioButton.ContextMenu>
+            </Button.Triggers>
+        </Button>
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="Small Islands" Margin="1,0,0,90" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_14" HorizontalAlignment="Left" Width="203" Height="40" VerticalAlignment="Bottom">
+            <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
                 </ContextMenu>
-            </RadioButton.ContextMenu>
-            <RadioButton.Background>
+            </Button.ContextMenu>
+            <Button.Background>
                 <ImageBrush/>
-            </RadioButton.Background>
-            <RadioButton.Triggers>
+            </Button.Background>
+            <Button.Triggers>
                 <EventTrigger RoutedEvent="ToggleButton.Checked">
                     <BeginStoryboard>
                         <Storyboard AutoReverse="False">
@@ -645,11 +648,11 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
-            </RadioButton.Triggers>
-        </RadioButton>
+            </Button.Triggers>
+        </Button>
         <Rectangle Fill="#FF535353" HorizontalAlignment="Left" Height="6" Margin="-2,0,0,170" Stroke="Black" VerticalAlignment="Bottom" Width="206"/>
         <cefSharp:ChromiumWebBrowser x:Name="DiscordWidget" Address="https://discordapp.com/widget?id=381460955789524993" Height="388" Margin="0,54,10,0" VerticalAlignment="Top" Visibility="Collapsed" HorizontalAlignment="Right" Width="246"/>
-        <Button Style="{StaticResource Button.Style.Forth}" x:Name="DiscordIcon" Content="" Grid.Column="2" Margin="0,10,10,0" Click="DiscordIcon_Click" HorizontalAlignment="Right" Width="38" Height="44" VerticalAlignment="Top">
+        <Button Style="{StaticResource Button.Style.Forth}" x:Name="DiscordIcon" Content="" Margin="0,447,18,0" Click="DiscordIcon_Click" HorizontalAlignment="Right" Width="38" Height="44" VerticalAlignment="Top">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -659,9 +662,9 @@
         </Button>
         <Button x:Name="DiscordWidgetExit" Content="X" Margin="0,54,10,0" Background="#FF7289DA" BorderBrush="Black" Click="DiscordWidgetExit_Click" Height="25" VerticalAlignment="Top" Visibility="Collapsed" HorizontalAlignment="Right" Width="20"/>
         <TextBox x:Name="SettingsTextBar" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="{Binding SettingsValue}" VerticalAlignment="Top" Width="314" TextChanged="SettingsTextBar_TextChanged" Visibility="Collapsed" Margin="203,0,0,0"/>
-        <Label Content="Version 1.4 (Release)" Margin="0,0,719,29" VerticalAlignment="Bottom" Foreground="#FFC3C3C3" FontSize="16" Height="33" HorizontalAlignment="Right" Width="154"/>
-        <WebBrowser Grid.Column="2" HorizontalAlignment="Left" Height="27" Margin="653,93,-3,0" Grid.Row="4" VerticalAlignment="Top" Width="31" Grid.RowSpan="3" Visibility="Hidden" Source="{x:Null}" Grid.ColumnSpan="3"/>
-        <CheckBox x:Name ="AutoUpdateCheck" Content="AutoUpdate" HorizontalAlignment="Left" Margin="6,0,0,3" Grid.Row="6" VerticalAlignment="Bottom" Background="Black" Foreground="#FF077507" Width="96" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" FontWeight="Bold" Height="18"/>
+        <Label Content="Version 1.5 (Release)" Margin="0,0,719,29" VerticalAlignment="Bottom" Foreground="#FFC3C3C3" FontSize="16" Height="33" HorizontalAlignment="Right" Width="154"/>
+        <WebBrowser HorizontalAlignment="Left" Height="27" Margin="653,93,0,0" VerticalAlignment="Top" Width="31" Visibility="Hidden" Source="{x:Null}"/>
+        <CheckBox x:Name ="AutoUpdateCheck" Content="AutoUpdate" HorizontalAlignment="Left" Margin="6,0,0,3" VerticalAlignment="Bottom" Background="Black" Foreground="#FF077507" Width="96" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" FontWeight="Bold" Height="18"/>
         <Image x:Name="ScrollBackground" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/TransparentGray.png" HorizontalAlignment="Left" Width="207" Stretch="Fill" Visibility="Collapsed" Margin="203,63,0,117"/>
         <ScrollViewer x:Name="ScrollRates" Margin="203,64,0,113" Visibility="Collapsed" HorizontalAlignment="Left" Width="205">
             <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Height="971" Width="188" FontFamily="ARK"><Run Foreground="#FF2AE632" Text="+ General Settings"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Max Dino Level: 150"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Experience Multiplier: 1x"/><LineBreak/><Run Foreground="#FFFF4141" Text="— 2x EXP until level 60. Bonus 2x EXP on weekends."/><LineBreak/><Run Foreground="#FFFF4141" Text="- Taming Speed: 5x"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Reduced Food Consumption for tamed dinos: 0.6x (AKA 40% slower food consumption. Does not affect the taming rate of wild dinos)"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Reduced Food Consumption for players: 0.6x"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Mindwipe: Unlimited Wipes "/><LineBreak/><Run Foreground="#FF2AE632" Text="+ Dino Tame Settings"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Max Tamed Dinos: 8,000"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Max Tribe Tamed Dinos: 500"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Dino Decay Period: 45 Days"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Dino Decay: Starve Only, Can be Claimed"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Platform saddles: Set to not add to tribe tame count "/><LineBreak/><Run Foreground="#FF2AE632" Text="+"/><Run Text=" "/><Run Foreground="#FF2AE632" Text="Dino Baby Settings"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Dino Mating Interval: 0.5x"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Egg Hatch Speed: 10x"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Baby Mature Speed: 20x"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Baby Food Consumption Speed: 2x"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Allow Baby Dino Imprint Cuddle by Anyone: Yes"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Imprinting Time: 0.09 or Approximately 43 mins "/><LineBreak/><Run Foreground="#FF2AE632" Text="+ Resource Settings"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Harvest Amount: 2x"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Prevent Building in Resource-Rich Areas: ON"/><LineBreak/><Run Foreground="#FFFF4141" Text="- Suppress Replen
@@ -680,7 +683,7 @@
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
-        <Image x:Name="TransparentGray" Visibility="Collapsed" HorizontalAlignment="Left" Height="592" Margin="1,0,-2,-2" VerticalAlignment="Top" Width="1093" Grid.RowSpan="8" Grid.ColumnSpan="5" Source="Resources/TransparentGray.png" Stretch="Fill"/>
+        <Image x:Name="TransparentGray" Visibility="Collapsed" HorizontalAlignment="Left" Height="592" Margin="1,0,-4,-2" VerticalAlignment="Top" Width="1093" Source="Resources/TransparentGray.png" Stretch="Fill"/>
         <Button Style="{StaticResource Button.Style.First}" Content="V" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="35" Background="#006E4D4D" RenderTransformOrigin="0.5,0.5" FontSize="11" Click="Button_Click_15" Margin="181,28,0,0">
             <Button.RenderTransform>
                 <TransformGroup>
@@ -692,16 +695,16 @@
             </Button.RenderTransform>
         </Button>
         <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Island.png" Margin="10,346,0,0" HorizontalAlignment="Left" Width="54" Height="41" VerticalAlignment="Top"/>
-        <RadioButton Style="{StaticResource Button.Style.Third}" Content="Valguero" Margin="1,346,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="RadioButton_Checked" Checked="RadioButton_Checked" HorizontalAlignment="Left" Width="203" Height="40" VerticalAlignment="Top">
-            <RadioButton.ContextMenu>
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="Valguero" Margin="1,346,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_111" HorizontalAlignment="Left" Width="203" Height="40" VerticalAlignment="Top">
+            <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
                 </ContextMenu>
-            </RadioButton.ContextMenu>
-            <RadioButton.Background>
+            </Button.ContextMenu>
+            <Button.Background>
                 <ImageBrush/>
-            </RadioButton.Background>
-            <RadioButton.Triggers>
+            </Button.Background>
+            <Button.Triggers>
                 <EventTrigger RoutedEvent="ToggleButton.Checked">
                     <BeginStoryboard>
                         <Storyboard AutoReverse="False">
@@ -712,13 +715,12 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
-            </RadioButton.Triggers>
-        </RadioButton>
+            </Button.Triggers>
+        </Button>
         <Rectangle Fill="#FF535353" HorizontalAlignment="Left" Height="5" Margin="-2,244,0,0" Stroke="Black" VerticalAlignment="Top" Width="65"/>
         <Rectangle Fill="#FF535353" HorizontalAlignment="Left" Height="5" Margin="142,244,0,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
         <Label Content="Non-Canon" HorizontalAlignment="Left" Margin="68,233,0,0" VerticalAlignment="Top" FontFamily="Impact" FontSize="14" Height="28" Width="73"/>
-        <Label Content="Server Availability: Online" HorizontalAlignment="Left" Margin="13,0,0,44" Height="26" VerticalAlignment="Bottom"/>
-        <Rectangle Fill="#FFB8B8FF" Opacity="0.50" Margin="0,-72,-344,-278" Stroke="#00000000" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="918">
+        <Rectangle Fill="#FFB8B8FF" Opacity="0.38" Margin="0,3,-1004,-353" Stroke="#00000000" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="918" IsEnabled="False" StrokeThickness="0">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

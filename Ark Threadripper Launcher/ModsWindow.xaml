@@ -4,67 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         mc:Ignorable="d"
         Title="Mods" Height="727.489" Width="672.107" Icon="Resources/Steam.png" ResizeMode="NoResize">
     <Window.Resources>
-        <SolidColorBrush x:Key="HighlightBrush" Color="#FF6C6C6C" Opacity="0.4" />
-        <Style x:Key="Button.Style.First" TargetType="Button">
-            <Setter Property="Margin" Value="0" />
-            <Setter Property="HorizontalAlignment" Value="Stretch" />
-            <Setter Property="Padding" Value="{DynamicResource Button.Pading}" />
-            <Setter Property="BorderThickness" Value="{DynamicResource App.BorderThickness}" />
-            <Setter Property="Background" Value="{DynamicResource Button.Color.Passive}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource Button.Color.BorderBrush}" />
-            <Setter Property="TextElement.FontSize" Value="{DynamicResource Font.Size.X-Medium}" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Grid
-                                Margin="0"
-                                Background="{Binding ElementName=buttonBorder, Path=Background}"
-                                UseLayoutRounding="True">
-                            <Border
-                                    x:Name="buttonBorder"
-                                    Width="{TemplateBinding Width}"
-                                    Height="{TemplateBinding Height}"
-                                    Background="{TemplateBinding Background}"
-                                    BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness}">
-                                <!--  Padding="1"  -->
-                                <ContentControl
-                                        Margin="{TemplateBinding Padding}"
-                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                        Content="{TemplateBinding Content}" />
-                            </Border>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="buttonBorder" Property="Background"
-                                            Value="{DynamicResource HighlightBrush}" />
-                                <Setter TargetName="buttonBorder" Property="BorderBrush"
-                                            Value="{DynamicResource HightlightBrush}" />
-                                <Setter Property="Foreground" Value="{DynamicResource Font.Color.Norm}" />
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter TargetName="buttonBorder" Property="Background"
-                                            Value="{DynamicResource Button.Color.MouseClick}" />
-                                <Setter TargetName="buttonBorder" Property="BorderBrush"
-                                            Value="{DynamicResource Button.Color.MouseClick}" />
-                                <Setter Property="Foreground" Value="{DynamicResource Font.Color.Norm}" />
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="White" />
-                                <Setter TargetName="buttonBorder" Property="Background" Value="Black" />
-                                <Setter TargetName="buttonBorder" Property="BorderBrush" Value="White" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+
     </Window.Resources>
-    <Grid>
+    <Grid fw:PointerTracker.Enabled="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="172*"/>
             <RowDefinition Height="29*"/>
@@ -104,27 +50,23 @@
         <Button Content="Install all" Margin="35,99,530,0" Grid.Row="6" VerticalAlignment="Top" Height="37" Click="Button_Click"/>
         <Label Content="Structures Plus - 53.483 MB" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="White" Height="56" Width="146" FontSize="10" FontFamily="Segoe UI Semibold" Grid.RowSpan="2"/>
         <Image HorizontalAlignment="Left" Height="13" Margin="10,14,0,0" Grid.Row="2" VerticalAlignment="Top" Width="65" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/5Star.png"/>
-        <Label Content="12,356 ratings" Margin="75,6,508,176" Grid.Row="2" Foreground="White" FontSize="9" FontFamily="Segoe UI Black" Grid.RowSpan="2"/>
-        <Label Content="366 ratings" Margin="250,7,343,176" Grid.Row="2" Foreground="White" FontSize="9" FontFamily="Segoe UI Black" Grid.RowSpan="2"/>
         <Label Content="KRY Wardrobe - 265.396 MB" HorizontalAlignment="Left" Margin="175,0,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="White" Height="29" Width="146" FontSize="10" FontFamily="Segoe UI Semibold"/>
         <Image HorizontalAlignment="Left" Height="13" Margin="175,14,0,0" Grid.Row="2" VerticalAlignment="Top" Width="65" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/5Star.png"/>
         <Image HorizontalAlignment="Left" Height="13" Margin="343,14,0,0" Grid.Row="2" VerticalAlignment="Top" Width="65" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/5Star.png"/>
-        <Label Content="766 ratings" Margin="419,7,169,176" Grid.Row="2" Foreground="White" FontSize="9" FontFamily="Segoe UI Black" Grid.RowSpan="2"/>
         <Label Content="Pimp My Home - 162.964 MB" HorizontalAlignment="Left" Margin="343,0,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="White" Height="29" Width="146" FontSize="10" FontFamily="Segoe UI Semibold"/>
         <Label Content="Castles, Keeps &amp; Forts - 624 MB" HorizontalAlignment="Left" Margin="508,2,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="White" Height="58" Width="146" FontSize="9" FontFamily="Segoe UI Semibold" Grid.RowSpan="3"/>
         <Image HorizontalAlignment="Left" Height="13" Margin="508,14,0,0" Grid.Row="2" VerticalAlignment="Top" Width="65" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/5Star.png"/>
-        <Label Content="3,797 ratings" Margin="572,6,10,178" Grid.Row="2" Foreground="White" FontSize="9" FontFamily="Segoe UI Black" Grid.RowSpan="2"/>
-        <Rectangle Margin="10,27,508,0" Stroke="#FF767676" Grid.RowSpan="3" Height="202" VerticalAlignment="Top">
+        <Rectangle Margin="10,28,508,0" Stroke="#FF767676" Grid.RowSpan="4" Height="202" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <ImageBrush/>
             </Rectangle.Fill>
         </Rectangle>
-        <Button Style="{StaticResource Button.Style.First}" Content="" Margin="10,27,508,0" VerticalAlignment="Top" Height="202" Grid.RowSpan="3" Click="Button_Click_1">
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="" Margin="10,28,508,0" VerticalAlignment="Top" Height="202" Grid.RowSpan="4" Click="Button_Click_1">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Rectangle Height="202" Margin="173,27,343,0" Stroke="#FF767676" VerticalAlignment="Top" Grid.RowSpan="3">
+        <Rectangle Height="202" Margin="175,28,341,0" Stroke="#FF767676" VerticalAlignment="Top" Grid.RowSpan="4">
             <Rectangle.Fill>
                 <ImageBrush
         />
@@ -172,17 +114,17 @@
         />
             </Rectangle.Fill>
         </Rectangle>
-        <Button Style="{StaticResource Button.Style.First}" Content="" Margin="173,27,343,0" VerticalAlignment="Top" Height="201" Grid.RowSpan="3" Click="Button_Click_2">
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="" Margin="175,28,341,0" VerticalAlignment="Top" Height="201" Grid.RowSpan="3" Click="Button_Click_2">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Style="{StaticResource Button.Style.First}" Content="" Margin="343,28,175,0" VerticalAlignment="Top" Height="201" Click="Button_Click_3" Grid.RowSpan="3">
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="" Margin="343,28,175,0" VerticalAlignment="Top" Height="201" Click="Button_Click_3" Grid.RowSpan="3">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Style="{StaticResource Button.Style.First}" Content="" Margin="508,27,10,0" VerticalAlignment="Top" Height="201" Grid.RowSpan="3" Click="Button_Click_4">
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="" Margin="508,27,10,0" VerticalAlignment="Top" Height="201" Grid.RowSpan="3" Click="Button_Click_4">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
@@ -194,46 +136,15 @@
         <Label Content="Small Islands - 132.229 MB" HorizontalAlignment="Left" Margin="175,0,0,0" Grid.Row="7" VerticalAlignment="Top" Foreground="White" Height="29" Width="146" FontSize="10" FontFamily="Segoe UI Semibold"/>
         <Label Content="Naturalism 2 - 43.312 MB" HorizontalAlignment="Left" Margin="343,0,0,0" Grid.Row="7" VerticalAlignment="Top" Foreground="White" Height="29" Width="146" FontSize="10" FontFamily="Segoe UI Semibold"/>
         <Image HorizontalAlignment="Left" Height="13" Margin="10,16,0,0" Grid.Row="5" VerticalAlignment="Top" Width="65" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/5Star.png" Grid.RowSpan="2"/>
-        <Label Content="1,627 ratings" Margin="80,8,498,163" Grid.Row="5" Foreground="White" FontSize="9" FontFamily="Segoe UI Black" Grid.RowSpan="2"/>
-        <Button Style="{StaticResource Button.Style.First}" Content="" Margin="175,34,343,0" Grid.Row="3" VerticalAlignment="Top" Height="203" Grid.RowSpan="4" Click="Button_Click_5">
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="" Margin="175,34,343,0" Grid.Row="3" VerticalAlignment="Top" Height="203" Grid.RowSpan="4" Click="Button_Click_5">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
         <Image HorizontalAlignment="Left" Height="13" Margin="175,14,0,0" Grid.Row="5" VerticalAlignment="Top" Width="65" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/5Star.png"/>
-        <Label Content="393 ratings" Margin="254,8,320,166" Grid.Row="5" Foreground="White" FontSize="9" FontFamily="Segoe UI Black" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="-0.47"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="-0.242"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
         <Image HorizontalAlignment="Left" Height="13" Margin="508,16,0,0" Grid.Row="5" VerticalAlignment="Top" Width="65" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/4Star.png" Grid.RowSpan="2"/>
         <Image HorizontalAlignment="Left" Height="13" Margin="343,15,0,0" Grid.Row="5" VerticalAlignment="Top" Width="65" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/5Star.png"/>
-        <Label Content="160 ratings" Margin="586,6,-2,161" Grid.Row="5" Foreground="White" FontSize="9" FontFamily="Segoe UI Black" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="-0.061"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="0.001"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <Label Content="1,672 ratings" Margin="419,7,161,164" Grid.Row="5" Foreground="White" FontSize="9" FontFamily="Segoe UI Black" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="-0.47"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="-0.242"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <Button Style="{StaticResource Button.Style.First}" Content="" Margin="10,34,508,0" Grid.Row="3" VerticalAlignment="Top" Height="203" Grid.RowSpan="4" Click="Button_Click_6">
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="" Margin="10,34,508,0" Grid.Row="3" VerticalAlignment="Top" Height="203" Grid.RowSpan="4" Click="Button_Click_6">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
@@ -244,26 +155,24 @@
         />
             </Rectangle.Fill>
         </Rectangle>
-        <Button Style="{StaticResource Button.Style.First}" Content="" Margin="343,33,175,0" Grid.Row="3" VerticalAlignment="Top" Height="203" Grid.RowSpan="3" Click="Button_Click_7">
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="" Margin="343,33,175,0" Grid.Row="3" VerticalAlignment="Top" Height="203" Grid.RowSpan="3" Click="Button_Click_7">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Style="{StaticResource Button.Style.First}" Content="" Margin="508,34,10,0" Grid.Row="3" VerticalAlignment="Top" Height="203" Grid.RowSpan="4" Click="Button_Click_8">
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="" Margin="508,34,10,0" Grid.Row="3" VerticalAlignment="Top" Height="203" Grid.RowSpan="4" Click="Button_Click_8">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
         <Image HorizontalAlignment="Left" Height="13" Margin="343,13,0,0" Grid.Row="8" VerticalAlignment="Top" Width="65" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/5Star.png"/>
-        <Label Content="632 ratings" Margin="421,7,0,3" Grid.Row="8" Foreground="White" FontSize="9" FontFamily="Segoe UI Black" HorizontalAlignment="Left" Width="76"/>
         <Image HorizontalAlignment="Left" Height="13" Margin="175,13,0,0" Grid.Row="8" VerticalAlignment="Top" Width="65" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/4Star.png"/>
-        <Label Content="125 ratings" Margin="250,7,0,3" Grid.Row="8" Foreground="White" FontSize="9" FontFamily="Segoe UI Black" HorizontalAlignment="Left" Width="76"/>
-        <Button Style="{StaticResource Button.Style.First}" Content="" Margin="175,24,343,0" Grid.Row="6" VerticalAlignment="Top" Height="202" Grid.RowSpan="3" Click="Button_Click_9">
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="" Margin="175,24,343,0" Grid.Row="6" VerticalAlignment="Top" Height="202" Grid.RowSpan="3" Click="Button_Click_9">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Style="{StaticResource Button.Style.First}" Content="" Margin="343,24,175,0" Grid.Row="6" VerticalAlignment="Top" Height="202" Grid.RowSpan="3" Click="Button_Click_10">
+        <Button Style="{StaticResource ButtonRevealStyle}" Content="" Margin="343,24,175,0" Grid.Row="6" VerticalAlignment="Top" Height="202" Grid.RowSpan="3" Click="Button_Click_10">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>

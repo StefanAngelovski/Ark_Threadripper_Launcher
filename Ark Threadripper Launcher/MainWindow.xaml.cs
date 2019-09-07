@@ -350,13 +350,13 @@ namespace Ark_Threadripper_Launcher
             Link = "steam://connect/yukitsuki.com:27020";
         }
 
-        private void ToggleButton_Checked_1(object sender, RoutedEventArgs e) //Small Islands
+        private void Button_Click_14(object sender, RoutedEventArgs e) //Small Islands
         {
             Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/SmallIslands1.jpg", UriKind.Absolute));
             Link = "steam://connect/yukitsuki.com:27019";
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e) //Valguero
+        private void Button_Click_111(object sender, RoutedEventArgs e) //Valguero
         {
             Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/Valguero.jpg", UriKind.Absolute));
             Link = "steam://connect/yukitsuki.com:27025";
@@ -440,7 +440,7 @@ namespace Ark_Threadripper_Launcher
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void Button_Click_14(object sender, RoutedEventArgs e) //Dumpcheckfortogglebuttons
+        private void Button_Click_122(object sender, RoutedEventArgs e) //Dumpcheckfortogglebuttons
         {
             //Do nothing
         }

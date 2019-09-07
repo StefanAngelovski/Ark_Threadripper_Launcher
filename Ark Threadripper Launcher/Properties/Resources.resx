@@ -139,9 +139,6 @@
   <data name="ARK_ScorchedEarth" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ARK_ScorchedEarth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DefaultBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DefaultBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Ragnarok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ragnarok.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -237,5 +234,8 @@
   </data>
   <data name="Hexagon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hexagon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DefaultBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DefaultBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
