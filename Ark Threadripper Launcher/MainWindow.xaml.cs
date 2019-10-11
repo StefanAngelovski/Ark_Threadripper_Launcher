@@ -319,47 +319,397 @@ namespace Ark_Threadripper_Launcher
         {
             Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/Center.jpg", UriKind.Absolute));
             Link = "steam://connect/yukitsuki.com:27016";
+            CenterButton.Margin = new Thickness(25, 267, 0, 0);
+            CenterButtonBackground.Margin = new Thickness(25, 267, 0, 0);
+            CenterLogo.Margin = new Thickness(1, 250, 0, 0);
+            //Disable Island Button Movement
+            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
+            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
+            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
+            //Disable Scorched Button Movement
+            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
+            //Disable Aberration Button Movement
+            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
+            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
+            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
+            //Disable Extinction Button Movement
+            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
+
+
+
+            //Disable Ragnarok Button Movement
+            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
+            //Disable Valguero Button Movement
+            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
+
+
+            //Disable NoTame Button Movement
+            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
+            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
+            //Disable SmallIslands Button Movement
+            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
+            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
         }
 
         private void Button_Click_8(object sender, RoutedEventArgs e) ///Island
         {
             Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/TheIsland.jpg", UriKind.Absolute));
             Link = "steam://connect/yukitsuki.com:27015";
+            ButtonIsland.Margin = new Thickness(25, 63, 0, 0);
+            IslandButtonBackground.Margin = new Thickness(25, 63, 0, 0);
+            IslandLogo.Margin = new Thickness(25, 63, 0, 0);
+            //Disable Scorched Button Movement
+            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
+            //Disable Aberration Button Movement
+            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
+            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
+            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
+            //Disable Extinction Button Movement
+            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
+
+
+
+            //Disable Center Button Movement
+            CenterButton.Margin = new Thickness(2, 267, 0, 0);
+            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
+            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
+            //Disable Ragnarok Button Movement
+            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
+            //Disable Valguero Button Movement
+            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
+
+
+            //Disable NoTame Button Movement
+            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
+            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
+            //Disable SmallIslands Button Movement
+            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
+            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
+
+
         }
         private void Button_Click_1(object sender, RoutedEventArgs e) ///Scorched Earth
         {
             Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/ScorchedEarth.png", UriKind.Absolute));
             Link = "steam://connect/yukitsuki.com:27017";
+            ScorchedButton.Margin = new Thickness(25, 103, 0, 0);
+            ScorchedButtonBackground.Margin = new Thickness(25, 103, 0, 0);
+            ScorchedLogo.Margin = new Thickness(25, 103, 0, 0);
+            //Disable Island Button Movement
+            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
+            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
+            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
+            //Disable Aberration Button Movement
+            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
+            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
+            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
+            //Disable Extinction Button Movement
+            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
+
+
+
+            //Disable Center Button Movement
+            CenterButton.Margin = new Thickness(2, 267, 0, 0);
+            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
+            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
+            //Disable Ragnarok Button Movement
+            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
+            //Disable Valguero Button Movement
+            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
+
+
+            //Disable NoTame Button Movement
+            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
+            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
+            //Disable SmallIslands Button Movement
+            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
+            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
+
         }
 
         private void Button_Click_9(object sender, RoutedEventArgs e) ///Ragnarok
         {
             Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/Ragnarok.jpg", UriKind.Absolute));
             Link = "steam://connect/yukitsuki.com:27018";
+            RagnarokButton.Margin = new Thickness(25, 306, 0, 0);
+            RagnarokButtonBackground.Margin = new Thickness(25, 306, 0, 0);
+            RagnarokLogo.Margin = new Thickness(28, 306, 0, 0);
+            //Disable Island Button Movement
+            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
+            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
+            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
+            //Disable Scorched Button Movement
+            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
+            //Disable Aberration Button Movement
+            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
+            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
+            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
+            //Disable Extinction Button Movement
+            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
+
+
+
+            //Disable Center Button Movement
+            CenterButton.Margin = new Thickness(2, 267, 0, 0);
+            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
+            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
+            //Disable Valguero Button Movement
+            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
+
+
+            //Disable NoTame Button Movement
+            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
+            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
+            //Disable SmallIslands Button Movement
+            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
+            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
         }
 
         private void Button_Click_10(object sender, RoutedEventArgs e) ///Extinction
         {
             Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/Extinction.jpg", UriKind.Absolute));
             Link = "steam://connect/yukitsuki.com:27024";
+            ExtinctionButton.Margin = new Thickness(25, 183, 0, 0);
+            ExtinctionButtonBackground.Margin = new Thickness(25, 183, 0, 0);
+            ExtinctionLogo.Margin = new Thickness(25, 183, 0, 0);
+            //Disable Island Button Movement
+            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
+            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
+            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
+            //Disable Scorched Button Movement
+            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
+            //Disable Aberration Button Movement
+            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
+            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
+            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
+
+
+            //Disable Center Button Movement
+            CenterButton.Margin = new Thickness(2, 267, 0, 0);
+            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
+            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
+            //Disable Ragnarok Button Movement
+            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
+            //Disable Valguero Button Movement
+            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
+
+
+            //Disable NoTame Button Movement
+            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
+            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
+            //Disable SmallIslands Button Movement
+            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
+            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
         }
 
-        private void Button_Click_11(object sender, RoutedEventArgs e) ///Aberration
+        private void Button_Click_11(object sender, RoutedEventArgs e) ///Aberration 
         {
             Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/Aberration.jpg", UriKind.Absolute));
             Link = "steam://connect/yukitsuki.com:27020";
+            AberrationButton.Margin = new Thickness(25, 143, 0, 0);
+            AberrationButtonBackground.Margin = new Thickness(25, 143, 0, 0);
+            AberrationLogo.Margin = new Thickness(25, 143, 0, 0);
+            //Disable Island Button Movement
+            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
+            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
+            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
+            //Disable Scorched Button Movement
+            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
+            //Disable Extinction Button Movement
+            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
+
+
+            //Disable Center Button Movement
+            CenterButton.Margin = new Thickness(2, 267, 0, 0);
+            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
+            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
+            //Disable Ragnarok Button Movement
+            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
+            //Disable Valguero Button Movement
+            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
+
+
+            //Disable NoTame Button Movement
+            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
+            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
+            //Disable SmallIslands Button Movement
+            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
+            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
         }
 
         private void Button_Click_14(object sender, RoutedEventArgs e) //Small Islands
         {
             Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/SmallIslands1.jpg", UriKind.Absolute));
             Link = "steam://connect/yukitsuki.com:27019";
+            SmallIslandsButton.Margin = new Thickness(25, 0, 0, 90);
+            SmallIslandsButtonBackground.Margin = new Thickness(25, 0, 0, 90);
+            //Disable Island Button Movement
+            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
+            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
+            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
+            //Disable Scorched Button Movement
+            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
+            //Disable Aberration Button Movement
+            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
+            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
+            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
+            //Disable Extinction Button Movement
+            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
+
+
+
+            //Disable Center Button Movement
+            CenterButton.Margin = new Thickness(2, 267, 0, 0);
+            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
+            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
+            //Disable Ragnarok Button Movement
+            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
+            //Disable Valguero Button Movement
+            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
+
+
+            //Disable NoTame Button Movement
+            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
+            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
         }
 
         private void Button_Click_111(object sender, RoutedEventArgs e) //Valguero
         {
             Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/Valguero.jpg", UriKind.Absolute));
             Link = "steam://connect/yukitsuki.com:27025";
+            ValgueroButton.Margin = new Thickness(25, 346, 0, 0);
+            ValgueroButtonBackground.Margin = new Thickness(25, 346, 0, 0);
+            ValgueroLogo.Margin = new Thickness(25, 346, 0, 0);
+            //Disable Island Button Movement
+            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
+            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
+            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
+            //Disable Scorched Button Movement
+            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
+            //Disable Aberration Button Movement
+            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
+            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
+            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
+            //Disable Extinction Button Movement
+            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
+
+
+
+            //Disable Center Button Movement
+            CenterButton.Margin = new Thickness(2, 267, 0, 0);
+            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
+            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
+            //Disable Ragnarok Button Movement
+            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
+
+
+            //Disable NoTame Button Movement
+            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
+            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
+            //Disable SmallIslands Button Movement
+            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
+            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
+
+        }
+
+        private void ToggleButton_Checked_10(object sender, RoutedEventArgs e) //No Tame
+        {
+            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/SOTF.jpg", UriKind.Absolute));
+            Link = "steam://connect/yukitsuki.com:27022";
+            NoTameButton.Margin = new Thickness(25, 0, 0, 130);
+            NoTameButtonBackground.Margin = new Thickness(25, 0, 0, 130);
+            //Disable Island Button Movement
+            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
+            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
+            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
+            //Disable Scorched Button Movement
+            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
+            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
+            //Disable Aberration Button Movement
+            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
+            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
+            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
+            //Disable Extinction Button Movement
+            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
+            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
+
+
+
+            //Disable Center Button Movement
+            CenterButton.Margin = new Thickness(2, 267, 0, 0);
+            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
+            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
+            //Disable Valguero Button Movement
+            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
+            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
+            //Disable Ragnarok Button Movement
+            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
+            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
+
+
+            //Disable SmallIslands Button Movement
+            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
+            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
         }
 
 
@@ -403,12 +753,6 @@ namespace Ark_Threadripper_Launcher
         private void OnDoubleAnimationOnCompleted(object s, EventArgs e)
         {
             SettingsTextBar.Visibility = Visibility.Collapsed;
-        }
-
-        private void ToggleButton_Checked_10(object sender, RoutedEventArgs e) //No Tame
-        {
-            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/SOTF.jpg", UriKind.Absolute));
-            Link = "steam://connect/yukitsuki.com:27022";
         }
 
         private void DiscordIcon_Click(object sender, RoutedEventArgs e)

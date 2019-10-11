@@ -452,8 +452,9 @@
         </Rectangle>
         <Button x:Name="MainPlayButton" Style="{StaticResource Button.Style.Second}" Content="PLAY" Margin="0,0,18,19" FontFamily="Segoe UI Semibold" FontSize="24" Background="#FF077507" UseLayoutRounding="True" RenderTransformOrigin="0.5,0.5" Foreground="White" Padding="1" BorderBrush="#FFE97902" Click="Button_Click" Height="51" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="183"/>
         <Image Source="Resources/Threadripper Head.png" Stretch="Fill" HorizontalAlignment="Left" Width="180" Height="63" VerticalAlignment="Top"/>
-        <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Island.png" Margin="12,64,0,0" HorizontalAlignment="Left" Width="48" Height="37" VerticalAlignment="Top"/>
-        <Button Content="TheIsland" Style="{StaticResource ButtonRevealStyle}" Margin="0,63,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_8" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
+        <Rectangle x:Name="IslandButtonBackground" Fill="#FF191919" HorizontalAlignment="Left" Height="37" Margin="0,64,0,0" Stroke="Black" VerticalAlignment="Top" Width="204"/>
+        <Image x:Name="IslandLogo" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Island.png" Margin="12,64,0,0" HorizontalAlignment="Left" Width="48" Height="37" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonIsland" Content="TheIsland" Style="{StaticResource ButtonRevealStyle}" Margin="0,63,0,0" BorderBrush="White" Foreground="White" FontSize="14" Click="Button_Click_8" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
@@ -475,8 +476,9 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_ScorchedEarth.png" Margin="14,105,0,0" IsEnabled="False" RenderTransformOrigin="0.715,0.981" HorizontalAlignment="Left" Width="46" Height="42" VerticalAlignment="Top"/>
-        <Button Style="{StaticResource ButtonRevealStyle}" Content="Scorched Earth" Margin="0,103,0,0" BorderBrush="#FF191919" Foreground="White" Click="Button_Click_1" FontSize="14" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
+        <Rectangle x:Name="ScorchedButtonBackground" Fill="#FF191919" HorizontalAlignment="Left" Height="39" Margin="0,103,0,0" Stroke="Black" VerticalAlignment="Top" Width="204"/>
+        <Image x:Name="ScorchedLogo" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_ScorchedEarth.png" Margin="14,105,0,0" IsEnabled="False" RenderTransformOrigin="0.715,0.981" HorizontalAlignment="Left" Width="46" Height="42" VerticalAlignment="Top"/>
+        <Button x:Name="ScorchedButton" Style="{StaticResource ButtonRevealStyle}" Content="Scorched Earth" Margin="0,103,0,0" BorderBrush="White" Foreground="White" Click="Button_Click_1" FontSize="14" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
             <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
@@ -498,8 +500,9 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Aberration.png" Margin="14,145,0,0" Height="44" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45"/>
-        <Button Style="{StaticResource ButtonRevealStyle}" Content="Aberration" Margin="0,143,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" MinHeight="3" Click="Button_Click_11" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
+        <Rectangle x:Name="AberrationButtonBackground" Fill="#FF191919" HorizontalAlignment="Left" Height="39" Margin="0,143,0,0" Stroke="Black" VerticalAlignment="Top" Width="202"/>
+        <Image x:Name="AberrationLogo" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Aberration.png" Margin="14,145,0,0" Height="44" VerticalAlignment="Top" HorizontalAlignment="Left" Width="45"/>
+        <Button x:Name="AberrationButton" Style="{StaticResource ButtonRevealStyle}" Content="Aberration" Margin="0,143,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" MinHeight="3" Click="Button_Click_11" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
             <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
@@ -521,8 +524,9 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Extinction.png" Margin="10,182,0,0" HorizontalAlignment="Left" Width="50" Height="51" VerticalAlignment="Top"/>
-        <Button Style="{StaticResource ButtonRevealStyle}" Content="Extinction" Margin="0,183,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_10" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
+        <Rectangle x:Name="ExtinctionButtonBackground" Fill="#FF191919" HorizontalAlignment="Left" Height="39" Margin="0,183,0,0" Stroke="Black" VerticalAlignment="Top" Width="202"/>
+        <Image x:Name="ExtinctionLogo" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Extinction.png" Margin="10,182,0,0" HorizontalAlignment="Left" Width="50" Height="48" VerticalAlignment="Top"/>
+        <Button x:Name="ExtinctionButton" Style="{StaticResource ButtonRevealStyle}" Content="Extinction" Margin="0,183,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_10" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
             <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
@@ -544,8 +548,9 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Ragnarok.png" Margin="13,306,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="46" Height="48" VerticalAlignment="Top"/>
-        <Button Style="{StaticResource ButtonRevealStyle}" Content="Ragnarok" Margin="0,306,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_9" RenderTransformOrigin="0.497,1.154" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
+        <Rectangle x:Name="RagnarokButtonBackground" Fill="#FF191919" HorizontalAlignment="Left" Height="40" Margin="2,306,0,0" Stroke="Black" VerticalAlignment="Top" Width="202"/>
+        <Image x:Name="RagnarokLogo" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Ragnarok.png" Margin="13,306,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="46" Height="48" VerticalAlignment="Top"/>
+        <Button x:Name="RagnarokButton" Style="{StaticResource ButtonRevealStyle}" Content="Ragnarok" Margin="0,306,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_9" RenderTransformOrigin="0.497,1.154" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
             <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
@@ -567,8 +572,9 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Center.png" Margin="-13,250,0,0" HorizontalAlignment="Left" Width="96" Height="77" VerticalAlignment="Top" Stretch="Fill"/>
-        <Button Style="{StaticResource ButtonRevealStyle}" Content="The Center" Margin="0,266,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_7" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
+        <Rectangle x:Name="CenterButtonBackground" Fill="#FF191919" HorizontalAlignment="Left" Height="39" Margin="2,267,0,0" Stroke="Black" VerticalAlignment="Top" Width="202"/>
+        <Image x:Name="CenterLogo" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Center.png" Margin="-13,250,0,0" HorizontalAlignment="Left" Width="96" Height="77" VerticalAlignment="Top" Stretch="Fill"/>
+        <Button x:Name="CenterButton" Style="{StaticResource ButtonRevealStyle}" Content="The Center" Margin="0,266,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_7" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Top">
             <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
@@ -606,7 +612,8 @@
                 <ImageBrush/>
             </Button.Background>
         </Button>
-        <Button Style="{StaticResource ButtonRevealStyle}" Content="No Tame" Margin="0,0,0,130" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="ToggleButton_Checked_10" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Bottom">
+        <Rectangle x:Name="NoTameButtonBackground" Fill="#FF191919" HorizontalAlignment="Left" Height="40" Margin="0,0,0,130" Stroke="Black" VerticalAlignment="Bottom" Width="204"/>
+        <Button x:Name="NoTameButton" Style="{StaticResource ButtonRevealStyle}" Content="No Tame" Margin="0,0,0,130" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="ToggleButton_Checked_10" HorizontalAlignment="Left" Width="204" Height="40" VerticalAlignment="Bottom">
             <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
@@ -628,7 +635,8 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Button Style="{StaticResource ButtonRevealStyle}" Content="Small Islands" Margin="1,0,0,90" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_14" HorizontalAlignment="Left" Width="203" Height="40" VerticalAlignment="Bottom">
+        <Rectangle x:Name="SmallIslandsButtonBackground" Fill="#FF191919" HorizontalAlignment="Left" Height="40" Margin="0,0,0,90" Stroke="Black" VerticalAlignment="Bottom" Width="203"/>
+        <Button x:Name="SmallIslandsButton" Style="{StaticResource ButtonRevealStyle}" Content="Small Islands" Margin="1,0,0,90" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_14" HorizontalAlignment="Left" Width="203" Height="40" VerticalAlignment="Bottom">
             <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
@@ -662,7 +670,7 @@
         </Button>
         <Button x:Name="DiscordWidgetExit" Content="X" Margin="0,54,10,0" Background="#FF7289DA" BorderBrush="Black" Click="DiscordWidgetExit_Click" Height="25" VerticalAlignment="Top" Visibility="Collapsed" HorizontalAlignment="Right" Width="20"/>
         <TextBox x:Name="SettingsTextBar" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="{Binding SettingsValue}" VerticalAlignment="Top" Width="314" TextChanged="SettingsTextBar_TextChanged" Visibility="Collapsed" Margin="203,0,0,0"/>
-        <Label Content="Version 1.5 (Release)" Margin="0,0,719,29" VerticalAlignment="Bottom" Foreground="#FFC3C3C3" FontSize="16" Height="33" HorizontalAlignment="Right" Width="154"/>
+        <Label Content="Version 1.6 (Release)" Margin="0,0,719,29" VerticalAlignment="Bottom" Foreground="#FFC3C3C3" FontSize="16" Height="33" HorizontalAlignment="Right" Width="154"/>
         <WebBrowser HorizontalAlignment="Left" Height="27" Margin="653,93,0,0" VerticalAlignment="Top" Width="31" Visibility="Hidden" Source="{x:Null}"/>
         <CheckBox x:Name ="AutoUpdateCheck" Content="AutoUpdate" HorizontalAlignment="Left" Margin="6,0,0,3" VerticalAlignment="Bottom" Background="Black" Foreground="#FF077507" Width="96" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" FontWeight="Bold" Height="18"/>
         <Image x:Name="ScrollBackground" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/TransparentGray.png" HorizontalAlignment="Left" Width="207" Stretch="Fill" Visibility="Collapsed" Margin="203,63,0,117"/>
@@ -694,8 +702,9 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Image Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Island.png" Margin="10,346,0,0" HorizontalAlignment="Left" Width="54" Height="41" VerticalAlignment="Top"/>
-        <Button Style="{StaticResource ButtonRevealStyle}" Content="Valguero" Margin="1,346,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_111" HorizontalAlignment="Left" Width="203" Height="40" VerticalAlignment="Top">
+        <Rectangle x:Name="ValgueroButtonBackground" Fill="#FF191919" HorizontalAlignment="Left" Height="40" Margin="2,346,0,0" Stroke="Black" VerticalAlignment="Top" Width="202"/>
+        <Image x:Name="ValgueroLogo" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/ARK_Island.png" Margin="10,346,0,0" HorizontalAlignment="Left" Width="54" Height="41" VerticalAlignment="Top"/>
+        <Button x:Name="ValgueroButton" Style="{StaticResource ButtonRevealStyle}" Content="Valguero" Margin="1,346,0,0" BorderBrush="#FF191919" Foreground="White" FontSize="14" Click="Button_Click_111" HorizontalAlignment="Left" Width="203" Height="40" VerticalAlignment="Top">
             <Button.ContextMenu>
                 <ContextMenu>
                     <MenuItem Click="ServerRates" Header="Server Rates"/>
@@ -720,15 +729,6 @@
         <Rectangle Fill="#FF535353" HorizontalAlignment="Left" Height="5" Margin="-2,244,0,0" Stroke="Black" VerticalAlignment="Top" Width="65"/>
         <Rectangle Fill="#FF535353" HorizontalAlignment="Left" Height="5" Margin="142,244,0,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
         <Label Content="Non-Canon" HorizontalAlignment="Left" Margin="68,233,0,0" VerticalAlignment="Top" FontFamily="Impact" FontSize="14" Height="28" Width="73"/>
-        <Rectangle Fill="#FFB8B8FF" Opacity="0.38" Margin="0,3,-1004,-353" Stroke="#00000000" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="918" IsEnabled="False" StrokeThickness="0">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="23.794"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
+        <Ellipse Fill="#FF20CD0F" HorizontalAlignment="Left" Height="7" Margin="6,79,0,0" Stroke="Black" VerticalAlignment="Top" Width="7"/>
     </Grid>
 </Controls:MetroWindow>
