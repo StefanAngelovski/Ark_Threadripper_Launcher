@@ -13,6 +13,8 @@ using MahApps.Metro.Controls;
 using MahApps.Metro;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
+using SimpleRSS;
+using System.Collections.Generic;
 
 namespace Ark_Threadripper_Launcher
 {
@@ -255,6 +257,9 @@ namespace Ark_Threadripper_Launcher
         bool buttonPressed1 = false;
         int buttonPressed2 = Properties.Settings.Default.buttonPressed2 - 1;
         bool buttonPressed3 = false;
+        bool buttonPressed4 = false;
+        bool buttonPressed5 = false;
+
         bool AutoUpdate = false;
         public string NewURL { get; set; }
         public string Link { get; set; }
@@ -340,6 +345,14 @@ namespace Ark_Threadripper_Launcher
             ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
 
 
+            //Selected State
+            SelectedBut.Margin = new Thickness(6, 284, 0, 0);
+
+            //Removed State
+            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
+
+
+
 
             //Disable Ragnarok Button Movement
             RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
@@ -379,6 +392,12 @@ namespace Ark_Threadripper_Launcher
             ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
             ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
 
+
+            //Selected State
+            SelectedBut.Margin = new Thickness(6, 79, 0, 0);
+
+            //Removed State
+            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
 
 
             //Disable Center Button Movement
@@ -424,6 +443,11 @@ namespace Ark_Threadripper_Launcher
             ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
             ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
 
+            //Selected State
+            SelectedBut.Margin = new Thickness(6, 119, 0, 0);
+
+            //Removed State
+            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
 
 
             //Disable Center Button Movement
@@ -473,6 +497,13 @@ namespace Ark_Threadripper_Launcher
             ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
             ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
 
+            //Selected State
+            SelectedBut.Margin = new Thickness(6, 324, 0, 0);
+
+            //Removed State
+            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
+
+
 
 
             //Disable Center Button Movement
@@ -512,6 +543,13 @@ namespace Ark_Threadripper_Launcher
             AberrationButton.Margin = new Thickness(0, 143, 0, 0);
             AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
             AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
+
+            //Selected State
+            SelectedBut.Margin = new Thickness(6, 199, 0, 0);
+
+            //Removed State
+            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
+
 
 
             //Disable Center Button Movement
@@ -555,6 +593,13 @@ namespace Ark_Threadripper_Launcher
             ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
             ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
             ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
+
+            //Selected State
+            SelectedBut.Margin = new Thickness(6, 159, 0, 0);
+
+            //Removed State
+            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
+
 
 
             //Disable Center Button Movement
@@ -603,6 +648,13 @@ namespace Ark_Threadripper_Launcher
             ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
 
 
+            //Selected State
+            SelectedButDown.Margin = new Thickness(6, 0, 0, 106);
+
+            //Removed State
+            SelectedBut.Margin = new Thickness(-200, 437, 0, 0);
+
+
 
             //Disable Center Button Movement
             CenterButton.Margin = new Thickness(2, 267, 0, 0);
@@ -646,6 +698,13 @@ namespace Ark_Threadripper_Launcher
             ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
             ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
             ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
+
+            //Selected State
+            SelectedBut.Margin = new Thickness(6, 364, 0, 0);
+
+            //Removed State
+            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
+
 
 
 
@@ -691,7 +750,11 @@ namespace Ark_Threadripper_Launcher
             ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
             ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
 
+            //Selected State
+            SelectedButDown.Margin = new Thickness(6, 0, 0, 146);
 
+            //Removed State
+            SelectedBut.Margin = new Thickness(-200, 437, 0, 0);
 
             //Disable Center Button Movement
             CenterButton.Margin = new Thickness(2, 267, 0, 0);
@@ -757,18 +820,18 @@ namespace Ark_Threadripper_Launcher
 
         private void DiscordIcon_Click(object sender, RoutedEventArgs e)
         {
-            DiscordIcon.Visibility = Visibility.Collapsed;
-            DiscordWidget.Visibility = Visibility.Visible;
-            DoubleAnimation doubleanimation = new DoubleAnimation(0, 1, new Duration(TimeSpan.FromSeconds(1)));
-            DiscordWidget.BeginAnimation(OpacityProperty, doubleanimation);
-            DiscordWidgetExit.Visibility = Visibility.Visible;
-        }
-
-        private void DiscordWidgetExit_Click(object sender, RoutedEventArgs e)
-        {
-            DiscordWidgetExit.Visibility = Visibility.Collapsed;
-            DiscordIcon.Visibility = Visibility.Visible;
-            DiscordWidget.Visibility = Visibility.Collapsed;
+            if (!buttonPressed5)
+            {
+                DiscordWidget.Visibility = Visibility.Visible;
+                DoubleAnimation doubleanimation = new DoubleAnimation(0, 1, new Duration(TimeSpan.FromSeconds(1)));
+                DiscordWidget.BeginAnimation(OpacityProperty, doubleanimation);
+            buttonPressed5 = true;
+            }
+            else
+            {
+                DiscordWidget.Visibility = Visibility.Collapsed;
+            buttonPressed5 = false;
+            }
         }
 
         private void SettingsTextBar_TextChanged(object sender, TextChangedEventArgs e)
@@ -1136,6 +1199,43 @@ namespace Ark_Threadripper_Launcher
             ScrollRates.Visibility = Visibility.Collapsed;
             ScrollBackground.Visibility = Visibility.Collapsed;
             ServerRatesExit.Visibility = Visibility.Collapsed;
+        }
+
+        private void News_Click(object sender, RoutedEventArgs e)
+        {
+            if (!buttonPressed4)
+            {
+                RSSbrowser.Visibility = Visibility.Visible;
+                RSSTitle.Visibility = Visibility.Visible;
+                RSSTitleBackground.Visibility = Visibility.Visible;
+                buttonPressed4 = true;
+                DoubleAnimation doubleanimation = new DoubleAnimation(0, 1, new Duration(TimeSpan.FromSeconds(1)));
+                RSSbrowser.BeginAnimation(OpacityProperty, doubleanimation);
+                RSSTitle.BeginAnimation(OpacityProperty, doubleanimation);
+                RSSTitleBackground.BeginAnimation(OpacityProperty, doubleanimation);
+            }
+            else
+            {
+                RSSbrowser.Visibility = Visibility.Hidden;
+                RSSTitle.Visibility = Visibility.Hidden;
+                RSSTitleBackground.Visibility = Visibility.Hidden;
+                buttonPressed4 = false;
+            }
+
+            List<SimpleRSS.feed> FeedList = new List<SimpleRSS.feed>();
+            List<string> FeedURLs = new List<string>();
+
+            //Ark RSS
+            FeedURLs.Add("https://survivetheark.com/index.php?/rss/3-ark-news.xml/");
+
+            //Creates combined feed list from each feed supplied
+            FeedList = RSS.getFeeds(FeedURLs);
+
+            foreach (SimpleRSS.feed newsItem in FeedList)
+            {
+                RSSTitle.Text = newsItem.title;
+                RSSbrowser.Address = newsItem.link;
+            }
         }
     }
 }

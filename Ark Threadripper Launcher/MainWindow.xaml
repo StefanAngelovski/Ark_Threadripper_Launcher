@@ -439,6 +439,16 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Image x:Name="Background" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/DefaultBackground.png" OpacityMask="Black" Margin="203,0,-2,90" Stretch="UniformToFill"/>
+        <Image Source="Resources/Gradient.png" Stretch="Fill" Height="199" VerticalAlignment="Bottom" Margin="200,0,-2,87" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180.046"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
         <Rectangle fw:AcrylicWindow.Enabled="True" Fill="#FF191919" Stroke="#FF191919" HorizontalAlignment="Left" Width="203"/>
         <Rectangle Fill="#FF141414" Stroke="#FF141414" RenderTransformOrigin="0.501,1.52" Margin="0,0,0,-1" Height="91" VerticalAlignment="Bottom">
             <Rectangle.RenderTransform>
@@ -659,8 +669,8 @@
             </Button.Triggers>
         </Button>
         <Rectangle Fill="#FF535353" HorizontalAlignment="Left" Height="6" Margin="-2,0,0,170" Stroke="Black" VerticalAlignment="Bottom" Width="206"/>
-        <cefSharp:ChromiumWebBrowser x:Name="DiscordWidget" Address="https://discordapp.com/widget?id=381460955789524993" Height="388" Margin="0,54,10,0" VerticalAlignment="Top" Visibility="Collapsed" HorizontalAlignment="Right" Width="246"/>
-        <Button Style="{StaticResource Button.Style.Forth}" x:Name="DiscordIcon" Content="" Margin="0,447,18,0" Click="DiscordIcon_Click" HorizontalAlignment="Right" Width="38" Height="44" VerticalAlignment="Top">
+        <cefSharp:ChromiumWebBrowser x:Name="DiscordWidget" Address="https://discordapp.com/widget?id=381460955789524993" Margin="0,0,74,113" Visibility="Collapsed" RenderTransformOrigin="0.433,0.57" HorizontalAlignment="Right" Width="216" Height="318" VerticalAlignment="Bottom"/>
+        <Button Style="{StaticResource Button.Style.Forth}" x:Name="DiscordIcon" Content="" Margin="0,0,12,102" Click="DiscordIcon_Click" HorizontalAlignment="Right" Width="44" Height="44" VerticalAlignment="Bottom">
             <Button.BorderBrush>
                 <ImageBrush/>
             </Button.BorderBrush>
@@ -668,9 +678,8 @@
                 <ImageBrush ImageSource="pack://application:,,,/ArkThreadripperLauncher;component/Resources/DiscordIcon.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="DiscordWidgetExit" Content="X" Margin="0,54,10,0" Background="#FF7289DA" BorderBrush="Black" Click="DiscordWidgetExit_Click" Height="25" VerticalAlignment="Top" Visibility="Collapsed" HorizontalAlignment="Right" Width="20"/>
         <TextBox x:Name="SettingsTextBar" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="{Binding SettingsValue}" VerticalAlignment="Top" Width="314" TextChanged="SettingsTextBar_TextChanged" Visibility="Collapsed" Margin="203,0,0,0"/>
-        <Label Content="Version 1.6 (Release)" Margin="0,0,719,29" VerticalAlignment="Bottom" Foreground="#FFC3C3C3" FontSize="16" Height="33" HorizontalAlignment="Right" Width="154"/>
+        <Label Content="Version 1.7 (Release)" Margin="0,0,719,29" VerticalAlignment="Bottom" Foreground="#FFC3C3C3" FontSize="16" Height="33" HorizontalAlignment="Right" Width="154"/>
         <WebBrowser HorizontalAlignment="Left" Height="27" Margin="653,93,0,0" VerticalAlignment="Top" Width="31" Visibility="Hidden" Source="{x:Null}"/>
         <CheckBox x:Name ="AutoUpdateCheck" Content="AutoUpdate" HorizontalAlignment="Left" Margin="6,0,0,3" VerticalAlignment="Bottom" Background="Black" Foreground="#FF077507" Width="96" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" FontWeight="Bold" Height="18"/>
         <Image x:Name="ScrollBackground" Source="pack://application:,,,/ArkThreadripperLauncher;component/Resources/TransparentGray.png" HorizontalAlignment="Left" Width="207" Stretch="Fill" Visibility="Collapsed" Margin="203,63,0,117"/>
@@ -729,6 +738,26 @@
         <Rectangle Fill="#FF535353" HorizontalAlignment="Left" Height="5" Margin="-2,244,0,0" Stroke="Black" VerticalAlignment="Top" Width="65"/>
         <Rectangle Fill="#FF535353" HorizontalAlignment="Left" Height="5" Margin="142,244,0,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
         <Label Content="Non-Canon" HorizontalAlignment="Left" Margin="68,233,0,0" VerticalAlignment="Top" FontFamily="Impact" FontSize="14" Height="28" Width="73"/>
-        <Ellipse Fill="#FF20CD0F" HorizontalAlignment="Left" Height="7" Margin="6,79,0,0" Stroke="Black" VerticalAlignment="Top" Width="7"/>
+        <Ellipse x:Name="SelectedBut" Fill="#FF20CD0F" HorizontalAlignment="Left" Height="7" Margin="-200,437,0,0" Stroke="Black" VerticalAlignment="Top" Width="8"/>
+        <Ellipse x:Name="SelectedButDown" Fill="#FF20CD0F" HorizontalAlignment="Left" Margin="-200,0,0,136" Stroke="Black" Width="8" Height="7" VerticalAlignment="Bottom"/>
+        <cefSharp:ChromiumWebBrowser Name="RSSbrowser" Address="{x:Null}" Margin="238,26,0,99" Visibility="Collapsed" HorizontalAlignment="Left" Width="340"/>
+        <Rectangle x:Name="RSSTitleBackground" Visibility="Collapsed" Fill="#FF292929" Height="93" Margin="0,38,74,0" Stroke="Black" VerticalAlignment="Top" HorizontalAlignment="Right" Width="327"/>
+        <TextBlock x:Name="RSSTitle" HorizontalAlignment="Right" Margin="0,54,61,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="77" Width="328" FontSize="24" Visibility="Collapsed" FontFamily="ARK">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF7C7C7C" Offset="0.179"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Button Style="{StaticResource Button.Style.Forth}" x:Name="NewsButton" Content="" Margin="0,0,12,148" Click="News_Click" HorizontalAlignment="Right" Width="44" Height="44" VerticalAlignment="Bottom">
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/Exclamation.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Controls:MetroWindow>

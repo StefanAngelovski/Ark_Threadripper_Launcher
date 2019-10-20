@@ -223,6 +223,16 @@ namespace Ark_Threadripper_Launcher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Exclamation {
+            get {
+                object obj = ResourceManager.GetObject("Exclamation", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Extinction {
             get {
                 object obj = ResourceManager.GetObject("Extinction", resourceCulture);
@@ -266,16 +276,6 @@ namespace Ark_Threadripper_Launcher.Properties {
         internal static System.Drawing.Bitmap MythicalCreatures {
             get {
                 object obj = ResourceManager.GetObject("MythicalCreatures", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Naturalism2 {
-            get {
-                object obj = ResourceManager.GetObject("Naturalism2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
