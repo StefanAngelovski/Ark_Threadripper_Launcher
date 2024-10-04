@@ -6,9 +6,6 @@
 ![Launcher](https://github.com/user-attachments/assets/3ff9ff1d-05cb-42ba-ba26-98d7e0f93621)
 *This GIF shows much of the functionality of the launcher.*
 
-![Launcher2](https://github.com/user-attachments/assets/4b36398f-0c34-4f99-ac71-d5b71276ace1)
-*This GIF shows the automatic updating system of the launcher.*
-
 ---
 
 ## Project Overview
@@ -51,7 +48,8 @@ This launcher offers several convenient features for users, including direct ser
 
 This project began as a **freelance project** during my time in high school at [SUGS Nikola Karev](https://nikolakarev.edu.mk/). Although it wasn’t part of my official coursework, I took on the project independently. Recently, I revisited and updated the launcher, optimizing the code based on my current programming knowledge. I significantly reduced the size of the launcher while enhancing its performance.
 
----
+![Launcher2](https://github.com/user-attachments/assets/4b36398f-0c34-4f99-ac71-d5b71276ace1)
+*This GIF shows the automatic updating system of the launcher.*
 
 ## Technologies Used
 
