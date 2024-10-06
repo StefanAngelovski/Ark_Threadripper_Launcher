@@ -19,8 +19,8 @@ using System.Collections.Generic;
 namespace Ark_Threadripper_Launcher
 {
     public partial class MainWindow : MetroWindow, INotifyPropertyChanged
-
     {
+        // Constructor
         public MainWindow()
         {
             InitializeComponent();
@@ -29,230 +29,19 @@ namespace Ark_Threadripper_Launcher
 
             ((App)Application.Current).WindowPlace.Register(this);
 
-            if (AutoUpdate == true)
+            // Check for auto-update
+            if (AutoUpdate)
             {
                 AutoUpdater.Start("https://www.dropbox.com/s/rdkn2ie547cs9kr/UpdateData.xml?dl=1");
             }
-            if (buttonPressed2 > 1)
-            {
-                buttonPressed2 = Settings.Default.buttonPressed2 - 1;
-            }
-            if (buttonPressed2 == 1)
-            {
-                buttonPressed2 = Settings.Default.buttonPressed2;
-            }
-            if (buttonPressed2 < 1)
-            {
-                buttonPressed2 = 1;
-            }
-            if (buttonPressed2 == 1)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Red"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = Brushes.Red;
-                MainPlayButton.Background = Brushes.Red;
-                return;
-            }
-            if (buttonPressed2 == 2)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Green"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#548E19")); ;
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#548E19")); ;
-                return;
-            }
-            if (buttonPressed2 == 3)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Blue"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1585B5"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1585B5"));
-                return;
-            }
-            if (buttonPressed2 == 4)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Purple"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#574EB9"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#574EB9"));
-                return;
-            }
-            if (buttonPressed2 == 5)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Orange"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CF5A07"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CF5A07"));
-                return;
-            }
-            if (buttonPressed2 == 6)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Lime"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8AA407"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8AA407"));
-                return;
-            }
-            if (buttonPressed2 == 7)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Emerald"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#077507"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#077507"));
-                return;
-            }
-            if (buttonPressed2 == 8)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Teal"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#07908E"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#07908E"));
-                return;
-            }
-            if (buttonPressed2 == 9)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Cyan"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1D88BC"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1D88BC"));
-                return;
-            }
-            if (buttonPressed2 == 10)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Cobalt"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#0747C6"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#0747C6"));
-                return;
-            }
-            if (buttonPressed2 == 11)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Indigo"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5C07D3"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5C07D3"));
-                return;
-            }
-            if (buttonPressed2 == 12)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Violet"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8F07D3"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8F07D3"));
-                return;
-            }
-            if (buttonPressed2 == 13)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Pink"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CA62AD"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CA62AD"));
-                return;
-            }
-            if (buttonPressed2 == 14)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Magenta"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#B40763"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#B40763"));
-                return;
-            }
-            if (buttonPressed2 == 15)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Crimson"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#890725"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#890725"));
-                return;
-            }
-            if (buttonPressed2 == 16)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Amber"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#C7890F"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#C7890F"));
-                return;
-            }
-            if (buttonPressed2 == 17)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Yellow"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#D2B90C"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#D2B90C"));
-                return;
-            }
-            if (buttonPressed2 == 18)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Brown"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#6F4F2A"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#6F4F2A"));
-                return;
-            }
-            if (buttonPressed2 == 19)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Olive"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5E7357"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5E7357"));
-                return;
-            }
-            if (buttonPressed2 == 20)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Steel"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#576573"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#576573"));
-                return;
-            }
-            if (buttonPressed2 == 21)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Mauve"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#655475"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#655475"));
-                return;
-            }
-            if (buttonPressed2 == 22)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Taupe"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#736845"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#736845"));
-                return;
-            }
-            if (buttonPressed2 == 23)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Sienna"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#87492B"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#87492B"));
-                return;
-            }
+
+            // Ensure buttonPressed2 stays within bounds
+            buttonPressed2 = Math.Max(Settings.Default.buttonPressed2 - 1, 1);
+
+            // Apply theme based on buttonPressed2
+            ApplyTheme(buttonPressed2);
         }
+
         bool buttonPressed = false;
         bool buttonPressed1 = false;
         int buttonPressed2 = Properties.Settings.Default.buttonPressed2 - 1;
@@ -264,40 +53,105 @@ namespace Ark_Threadripper_Launcher
         public string NewURL { get; set; }
         public string Link { get; set; }
         public static string TextDir { get; set; }
-        private void Button_Click(object sender, RoutedEventArgs e) //Play Button
+
+        // Refactored method to apply theme
+        private void ApplyTheme(int buttonPressed2)
+        {
+            var themes = new Dictionary<int, (string Accent, string ColorCode)>
+            {
+                { 1, ("Red", "#FF0000") },
+                { 2, ("Green", "#548E19") },
+                { 3, ("Blue", "#1585B5") },
+                { 4, ("Purple", "#574EB9") },
+                { 5, ("Orange", "#CF5A07") },
+                { 6, ("Lime", "#8AA407") },
+                { 7, ("Emerald", "#077507") },
+                { 8, ("Teal", "#07908E") },
+                { 9, ("Cyan", "#1D88BC") },
+                { 10, ("Cobalt", "#0747C6") },
+                { 11, ("Indigo", "#5C07D3") },
+                { 12, ("Violet", "#8F07D3") },
+                { 13, ("Pink", "#CA62AD") },
+                { 14, ("Magenta", "#B40763") },
+                { 15, ("Crimson", "#890725") },
+                { 16, ("Amber", "#C7890F") },
+                { 17, ("Yellow", "#D2B90C") },
+                { 18, ("Brown", "#6F4F2A") },
+                { 19, ("Olive", "#5E7357") },
+                { 20, ("Steel", "#576573") },
+                { 21, ("Mauve", "#655475") },
+                { 22, ("Taupe", "#736845") },
+                { 23, ("Sienna", "#87492B") }
+            };
+
+            if (themes.TryGetValue(buttonPressed2, out var theme))
+            {
+                ThemeManager.ChangeAppStyle(Application.Current,
+                                            ThemeManager.GetAccent(theme.Accent),
+                                            ThemeManager.GetAppTheme("BaseDark"));
+
+                var colorBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(theme.ColorCode));
+                AutoUpdateCheck.Foreground = colorBrush;
+                MainPlayButton.Background = colorBrush;
+            }
+        }
+
+        // Play Button Click Event
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             Launcher.LaunchWebsite(Link);
         }
-        private void Button_Click_3(object sender, RoutedEventArgs e) //Screenshots
+
+        // Screenshot Button Click Event
+        private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             try
             {
-                var rootDir = @"C:\Program Files (x86)\Steam\userdata\";
-                var userDir = Directory.EnumerateDirectories(rootDir).First();
-                var userSubDir = Path.Combine(userDir, "760");
-                var remoteDir = Path.Combine(userSubDir, "remote");
-                var remoteSubDir = Path.Combine(remoteDir, "346110");
-                var screenshotsDir = Path.Combine(remoteSubDir, "screenshots");
-                Directory.Exists(screenshotsDir);
-                System.Diagnostics.Process.Start(screenshotsDir);
+                // Try to access Steam screenshots directory
+                OpenScreenshotsDirectory(@"C:\Program Files (x86)\Steam\userdata\", "760", "remote", "346110", "screenshots");
             }
             catch
             {
                 try
                 {
+                    // Handle settings directory if Steam screenshots directory fails
                     var settings = new Settings();
                     SettingsTextBar.Text = settings.SettingsValue;
                     System.Diagnostics.Process.Start(TextDir);
                 }
                 catch (Exception)
                 {
-                    Application.Current.MainWindow.Effect = new BlurEffect();
-                    Error f3 = new Error();
-                    f3.ShowDialog();
-                    Application.Current.MainWindow.Effect = null;
+                    // Show error window in case of failure
+                    ShowErrorDialog();
                 }
             }
         }
+
+        // Method to open screenshots directory
+        private void OpenScreenshotsDirectory(string rootDir, string subDir1, string subDir2, string subDir3, string screenshotsFolder)
+        {
+            var userDir = Directory.EnumerateDirectories(rootDir).First();
+            var screenshotsDir = Path.Combine(userDir, subDir1, subDir2, subDir3, screenshotsFolder);
+
+            if (Directory.Exists(screenshotsDir))
+            {
+                System.Diagnostics.Process.Start(screenshotsDir);
+            }
+            else
+            {
+                throw new DirectoryNotFoundException();
+            }
+        }
+
+        // Method to show error dialog with blur effect
+        private void ShowErrorDialog()
+        {
+            Application.Current.MainWindow.Effect = new BlurEffect();
+            Error errorDialog = new Error();
+            errorDialog.ShowDialog();
+            Application.Current.MainWindow.Effect = null;
+        }
+
 
         private void Button_Click_4(object sender, RoutedEventArgs e) ///Website Button
         {
@@ -320,459 +174,159 @@ namespace Ark_Threadripper_Launcher
             Application.Current.MainWindow.Effect = null;
         }
 
-        private void Button_Click_7(object sender, RoutedEventArgs e) //Center
+        private Dictionary<string, (FrameworkElement Button, FrameworkElement Background, FrameworkElement Logo)> buttonElements;
+        private Dictionary<string, (Thickness ButtonMargin, Thickness LogoMargin)> initialMargins;
+        private string steamConnectionLink;
+
+        private void InitializeButtonElements()
         {
-            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/Center.jpg", UriKind.Absolute));
-            Link = "steam://connect/27.33.160.254:27016";
-            CenterButton.Margin = new Thickness(25, 267, 0, 0);
-            CenterButtonBackground.Margin = new Thickness(25, 267, 0, 0);
-            CenterLogo.Margin = new Thickness(1, 250, 0, 0);
-            //Disable Island Button Movement
-            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
-            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
-            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
-            //Disable Scorched Button Movement
-            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
-            //Disable Aberration Button Movement
-            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
-            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
-            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
-            //Disable Extinction Button Movement
-            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
-
-
-            //Selected State
-            SelectedBut.Margin = new Thickness(6, 284, 0, 0);
-
-            //Removed State
-            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
-
-
-
-
-            //Disable Ragnarok Button Movement
-            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
-            //Disable Valguero Button Movement
-            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
-
-
-            //Disable NoTame Button Movement
-            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
-            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
-            //Disable SmallIslands Button Movement
-            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
-            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
+            buttonElements = new Dictionary<string, (FrameworkElement, FrameworkElement, FrameworkElement)>
+        {
+            {"Island", (ButtonIsland, IslandButtonBackground, IslandLogo)},
+            {"Scorched", (ScorchedButton, ScorchedButtonBackground, ScorchedLogo)},
+            {"Aberration", (AberrationButton, AberrationButtonBackground, AberrationLogo)},
+            {"Extinction", (ExtinctionButton, ExtinctionButtonBackground, ExtinctionLogo)},
+            {"Center", (CenterButton, CenterButtonBackground, CenterLogo)},
+            {"Ragnarok", (RagnarokButton, RagnarokButtonBackground, RagnarokLogo)},
+            {"Valguero", (ValgueroButton, ValgueroButtonBackground, ValgueroLogo)},
+            {"NoTame", (NoTameButton, NoTameButtonBackground, null)},
+            {"SmallIslands", (SmallIslandsButton, SmallIslandsButtonBackground, null)}
+        };
         }
 
-        private void Button_Click_8(object sender, RoutedEventArgs e) ///Island
+        private void InitializeInitialMargins()
         {
-            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/TheIsland.jpg", UriKind.Absolute));
-            Link = "steam://connect/27.33.160.254:27015";
-            ButtonIsland.Margin = new Thickness(25, 63, 0, 0);
-            IslandButtonBackground.Margin = new Thickness(25, 63, 0, 0);
-            IslandLogo.Margin = new Thickness(25, 63, 0, 0);
-            //Disable Scorched Button Movement
-            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
-            //Disable Aberration Button Movement
-            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
-            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
-            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
-            //Disable Extinction Button Movement
-            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
-
-
-            //Selected State
-            SelectedBut.Margin = new Thickness(6, 79, 0, 0);
-
-            //Removed State
-            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
-
-
-            //Disable Center Button Movement
-            CenterButton.Margin = new Thickness(2, 267, 0, 0);
-            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
-            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
-            //Disable Ragnarok Button Movement
-            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
-            //Disable Valguero Button Movement
-            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
-
-
-            //Disable NoTame Button Movement
-            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
-            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
-            //Disable SmallIslands Button Movement
-            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
-            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
-
-
-        }
-        private void Button_Click_1(object sender, RoutedEventArgs e) ///Scorched Earth
+            initialMargins = new Dictionary<string, (Thickness ButtonMargin, Thickness LogoMargin)>
         {
-            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/ScorchedEarth.png", UriKind.Absolute));
-            Link = "steam://connect/27.33.160.254:27017";
-            ScorchedButton.Margin = new Thickness(25, 103, 0, 0);
-            ScorchedButtonBackground.Margin = new Thickness(25, 103, 0, 0);
-            ScorchedLogo.Margin = new Thickness(25, 103, 0, 0);
-            //Disable Island Button Movement
-            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
-            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
-            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
-            //Disable Aberration Button Movement
-            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
-            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
-            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
-            //Disable Extinction Button Movement
-            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
-
-            //Selected State
-            SelectedBut.Margin = new Thickness(6, 119, 0, 0);
-
-            //Removed State
-            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
-
-
-            //Disable Center Button Movement
-            CenterButton.Margin = new Thickness(2, 267, 0, 0);
-            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
-            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
-            //Disable Ragnarok Button Movement
-            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
-            //Disable Valguero Button Movement
-            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
-
-
-            //Disable NoTame Button Movement
-            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
-            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
-            //Disable SmallIslands Button Movement
-            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
-            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
-
+            {"Island", (new Thickness(0, 63, 0, 0), new Thickness(12, 64, 0, 0))},
+            {"Scorched", (new Thickness(0, 103, 0, 0), new Thickness(14, 105, 0, 0))},
+            {"Aberration", (new Thickness(0, 143, 0, 0), new Thickness(14, 145, 0, 0))},
+            {"Extinction", (new Thickness(0, 183, 0, 0), new Thickness(10, 182, 0, 0))},
+            {"Center", (new Thickness(2, 267, 0, 0), new Thickness(-13, 250, 0, 0))},
+            {"Ragnarok", (new Thickness(2, 306, 0, 0), new Thickness(13, 306, 0, 0))},
+            {"Valguero", (new Thickness(2, 346, 0, 0), new Thickness(10, 346, 0, 0))},
+            {"NoTame", (new Thickness(0, 0, 0, 130), new Thickness(0, 0, 0, 130))},
+            {"SmallIslands", (new Thickness(1, 0, 0, 90), new Thickness(1, 0, 0, 90))}
+        };
         }
 
-        private void Button_Click_9(object sender, RoutedEventArgs e) ///Ragnarok
+        private void ResetButtonsToInitialPosition(string exceptButton)
         {
-            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/Ragnarok.jpg", UriKind.Absolute));
-            Link = "steam://connect/27.33.160.254:27018";
-            RagnarokButton.Margin = new Thickness(25, 306, 0, 0);
-            RagnarokButtonBackground.Margin = new Thickness(25, 306, 0, 0);
-            RagnarokLogo.Margin = new Thickness(28, 306, 0, 0);
-            //Disable Island Button Movement
-            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
-            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
-            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
-            //Disable Scorched Button Movement
-            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
-            //Disable Aberration Button Movement
-            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
-            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
-            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
-            //Disable Extinction Button Movement
-            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
+            if (buttonElements == null || initialMargins == null)
+            {
+                InitializeButtonElements();
+                InitializeInitialMargins();
+            }
 
-            //Selected State
-            SelectedBut.Margin = new Thickness(6, 324, 0, 0);
-
-            //Removed State
-            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
-
-
-
-
-            //Disable Center Button Movement
-            CenterButton.Margin = new Thickness(2, 267, 0, 0);
-            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
-            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
-            //Disable Valguero Button Movement
-            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
-
-
-            //Disable NoTame Button Movement
-            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
-            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
-            //Disable SmallIslands Button Movement
-            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
-            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
+            foreach (var kvp in buttonElements)
+            {
+                if (kvp.Key != exceptButton)
+                {
+                    var margins = initialMargins[kvp.Key];
+                    kvp.Value.Button.Margin = margins.ButtonMargin;
+                    kvp.Value.Background.Margin = margins.ButtonMargin;
+                    if (kvp.Value.Logo != null)
+                    {
+                        kvp.Value.Logo.Margin = margins.LogoMargin;
+                    }
+                }
+            }
         }
 
-        private void Button_Click_10(object sender, RoutedEventArgs e) ///Extinction
+        private void UpdateSelectedButton(string buttonName, Thickness newButtonMargin, Thickness newLogoMargin, string backgroundImageUri, string steamLink)
         {
-            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/Extinction.jpg", UriKind.Absolute));
-            Link = "steam://connect/27.33.160.254:27024";
-            ExtinctionButton.Margin = new Thickness(25, 183, 0, 0);
-            ExtinctionButtonBackground.Margin = new Thickness(25, 183, 0, 0);
-            ExtinctionLogo.Margin = new Thickness(25, 183, 0, 0);
-            //Disable Island Button Movement
-            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
-            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
-            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
-            //Disable Scorched Button Movement
-            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
-            //Disable Aberration Button Movement
-            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
-            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
-            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
+            if (buttonElements == null || initialMargins == null)
+            {
+                InitializeButtonElements();
+                InitializeInitialMargins();
+            }
 
-            //Selected State
-            SelectedBut.Margin = new Thickness(6, 199, 0, 0);
+            Background.Source = new BitmapImage(new Uri(backgroundImageUri, UriKind.Absolute));
+            steamConnectionLink = steamLink;
 
-            //Removed State
-            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
+            var (button, background, logo) = buttonElements[buttonName];
+            button.Margin = newButtonMargin;
+            background.Margin = newButtonMargin;
+            if (logo != null)
+            {
+                logo.Margin = newLogoMargin;
+            }
 
+            ResetButtonsToInitialPosition(buttonName);
 
-
-            //Disable Center Button Movement
-            CenterButton.Margin = new Thickness(2, 267, 0, 0);
-            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
-            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
-            //Disable Ragnarok Button Movement
-            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
-            //Disable Valguero Button Movement
-            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
-
-
-            //Disable NoTame Button Movement
-            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
-            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
-            //Disable SmallIslands Button Movement
-            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
-            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
+            if (buttonName == "NoTame" || buttonName == "SmallIslands")
+            {
+                SelectedButDown.Margin = new Thickness(6, 0, 0, newButtonMargin.Bottom + 16);
+                SelectedBut.Margin = new Thickness(-200, 437, 0, 0);
+            }
+            else
+            {
+                SelectedBut.Margin = new Thickness(6, newButtonMargin.Top + 16, 0, 0);
+                SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
+            }
         }
 
-        private void Button_Click_11(object sender, RoutedEventArgs e) ///Aberration 
+        private void Button_Click_7(object sender, RoutedEventArgs e) // Center
         {
-            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/Aberration.jpg", UriKind.Absolute));
-            Link = "steam://connect/27.33.160.254:27020";
-            AberrationButton.Margin = new Thickness(25, 143, 0, 0);
-            AberrationButtonBackground.Margin = new Thickness(25, 143, 0, 0);
-            AberrationLogo.Margin = new Thickness(25, 143, 0, 0);
-            //Disable Island Button Movement
-            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
-            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
-            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
-            //Disable Scorched Button Movement
-            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
-            //Disable Extinction Button Movement
-            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
-
-            //Selected State
-            SelectedBut.Margin = new Thickness(6, 159, 0, 0);
-
-            //Removed State
-            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
-
-
-
-            //Disable Center Button Movement
-            CenterButton.Margin = new Thickness(2, 267, 0, 0);
-            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
-            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
-            //Disable Ragnarok Button Movement
-            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
-            //Disable Valguero Button Movement
-            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
-
-
-            //Disable NoTame Button Movement
-            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
-            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
-            //Disable SmallIslands Button Movement
-            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
-            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
+            UpdateSelectedButton("Center", new Thickness(25, 267, 0, 0), new Thickness(1, 250, 0, 0),
+                "pack://application:,,,/ArkThreadripperLauncher;component/Resources/Center.jpg",
+                "steam://connect/27.33.160.254:27016");
         }
 
-        private void Button_Click_14(object sender, RoutedEventArgs e) //Small Islands
+        private void Button_Click_8(object sender, RoutedEventArgs e) // Island
         {
-            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/SmallIslands1.jpg", UriKind.Absolute));
-            Link = "steam://connect/27.33.160.254:27019";
-            SmallIslandsButton.Margin = new Thickness(25, 0, 0, 90);
-            SmallIslandsButtonBackground.Margin = new Thickness(25, 0, 0, 90);
-            //Disable Island Button Movement
-            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
-            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
-            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
-            //Disable Scorched Button Movement
-            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
-            //Disable Aberration Button Movement
-            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
-            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
-            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
-            //Disable Extinction Button Movement
-            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
-
-
-            //Selected State
-            SelectedButDown.Margin = new Thickness(6, 0, 0, 106);
-
-            //Removed State
-            SelectedBut.Margin = new Thickness(-200, 437, 0, 0);
-
-
-
-            //Disable Center Button Movement
-            CenterButton.Margin = new Thickness(2, 267, 0, 0);
-            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
-            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
-            //Disable Ragnarok Button Movement
-            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
-            //Disable Valguero Button Movement
-            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
-
-
-            //Disable NoTame Button Movement
-            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
-            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
+            UpdateSelectedButton("Island", new Thickness(25, 63, 0, 0), new Thickness(25, 63, 0, 0),
+                "pack://application:,,,/ArkThreadripperLauncher;component/Resources/TheIsland.jpg",
+                "steam://connect/27.33.160.254:27015");
         }
 
-        private void Button_Click_111(object sender, RoutedEventArgs e) //Valguero
+        private void Button_Click_1(object sender, RoutedEventArgs e) // Scorched Earth
         {
-            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/Valguero.jpg", UriKind.Absolute));
-            Link = "steam://connect/yukitsuki.com:27025";
-            ValgueroButton.Margin = new Thickness(25, 346, 0, 0);
-            ValgueroButtonBackground.Margin = new Thickness(25, 346, 0, 0);
-            ValgueroLogo.Margin = new Thickness(25, 346, 0, 0);
-            //Disable Island Button Movement
-            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
-            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
-            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
-            //Disable Scorched Button Movement
-            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
-            //Disable Aberration Button Movement
-            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
-            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
-            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
-            //Disable Extinction Button Movement
-            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
-
-            //Selected State
-            SelectedBut.Margin = new Thickness(6, 364, 0, 0);
-
-            //Removed State
-            SelectedButDown.Margin = new Thickness(-200, 0, 0, 136);
-
-
-
-
-            //Disable Center Button Movement
-            CenterButton.Margin = new Thickness(2, 267, 0, 0);
-            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
-            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
-            //Disable Ragnarok Button Movement
-            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
-
-
-            //Disable NoTame Button Movement
-            NoTameButton.Margin = new Thickness(0, 0, 0, 130);
-            NoTameButtonBackground.Margin = new Thickness(0, 0, 0, 130);
-            //Disable SmallIslands Button Movement
-            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
-            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
-
+            UpdateSelectedButton("Scorched", new Thickness(25, 103, 0, 0), new Thickness(25, 103, 0, 0),
+                "pack://application:,,,/ArkThreadripperLauncher;component/Resources/ScorchedEarth.png",
+                "steam://connect/27.33.160.254:27017");
         }
 
-        private void ToggleButton_Checked_10(object sender, RoutedEventArgs e) //No Tame
+        private void Button_Click_9(object sender, RoutedEventArgs e) // Ragnarok
         {
-            Background.Source = new BitmapImage(new Uri("pack://application:,,,/ArkThreadripperLauncher;component/Resources/SOTF.jpg", UriKind.Absolute));
-            Link = "steam://connect/27.33.160.254:27022";
-            NoTameButton.Margin = new Thickness(25, 0, 0, 130);
-            NoTameButtonBackground.Margin = new Thickness(25, 0, 0, 130);
-            //Disable Island Button Movement
-            ButtonIsland.Margin = new Thickness(0, 63, 0, 0);
-            IslandButtonBackground.Margin = new Thickness(0, 63, 0, 0);
-            IslandLogo.Margin = new Thickness(12, 64, 0, 0);
-            //Disable Scorched Button Movement
-            ScorchedButton.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedButtonBackground.Margin = new Thickness(0, 103, 0, 0);
-            ScorchedLogo.Margin = new Thickness(14, 105, 0, 0);
-            //Disable Aberration Button Movement
-            AberrationButton.Margin = new Thickness(0, 143, 0, 0);
-            AberrationButtonBackground.Margin = new Thickness(0, 143, 0, 0);
-            AberrationLogo.Margin = new Thickness(14, 145, 0, 0);
-            //Disable Extinction Button Movement
-            ExtinctionButton.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionButtonBackground.Margin = new Thickness(0, 183, 0, 0);
-            ExtinctionLogo.Margin = new Thickness(10, 182, 0, 0);
+            UpdateSelectedButton("Ragnarok", new Thickness(25, 306, 0, 0), new Thickness(28, 306, 0, 0),
+                "pack://application:,,,/ArkThreadripperLauncher;component/Resources/Ragnarok.jpg",
+                "steam://connect/27.33.160.254:27018");
+        }
 
-            //Selected State
-            SelectedButDown.Margin = new Thickness(6, 0, 0, 146);
+        private void Button_Click_10(object sender, RoutedEventArgs e) // Extinction
+        {
+            UpdateSelectedButton("Extinction", new Thickness(25, 183, 0, 0), new Thickness(25, 183, 0, 0),
+                "pack://application:,,,/ArkThreadripperLauncher;component/Resources/Extinction.jpg",
+                "steam://connect/27.33.160.254:27024");
+        }
 
-            //Removed State
-            SelectedBut.Margin = new Thickness(-200, 437, 0, 0);
+        private void Button_Click_11(object sender, RoutedEventArgs e) // Aberration
+        {
+            UpdateSelectedButton("Aberration", new Thickness(25, 143, 0, 0), new Thickness(25, 143, 0, 0),
+                "pack://application:,,,/ArkThreadripperLauncher;component/Resources/Aberration.jpg",
+                "steam://connect/27.33.160.254:27020");
+        }
 
-            //Disable Center Button Movement
-            CenterButton.Margin = new Thickness(2, 267, 0, 0);
-            CenterButtonBackground.Margin = new Thickness(2, 267, 0, 0);
-            CenterLogo.Margin = new Thickness(-13, 250, 0, 0);
-            //Disable Valguero Button Movement
-            ValgueroButton.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroButtonBackground.Margin = new Thickness(2, 346, 0, 0);
-            ValgueroLogo.Margin = new Thickness(10, 346, 0, 0);
-            //Disable Ragnarok Button Movement
-            RagnarokButton.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokButtonBackground.Margin = new Thickness(2, 306, 0, 0);
-            RagnarokLogo.Margin = new Thickness(13, 306, 0, 0);
+        private void Button_Click_14(object sender, RoutedEventArgs e) // Small Islands
+        {
+            UpdateSelectedButton("SmallIslands", new Thickness(25, 0, 0, 90), new Thickness(25, 0, 0, 90),
+                "pack://application:,,,/ArkThreadripperLauncher;component/Resources/SmallIslands1.jpg",
+                "steam://connect/27.33.160.254:27019");
+        }
 
+        private void Button_Click_111(object sender, RoutedEventArgs e) // Valguero
+        {
+            UpdateSelectedButton("Valguero", new Thickness(25, 346, 0, 0), new Thickness(25, 346, 0, 0),
+                "pack://application:,,,/ArkThreadripperLauncher;component/Resources/Valguero.jpg",
+                "steam://connect/yukitsuki.com:27025");
+        }
 
-            //Disable SmallIslands Button Movement
-            SmallIslandsButton.Margin = new Thickness(1, 0, 0, 90);
-            SmallIslandsButtonBackground.Margin = new Thickness(1, 0, 0, 90);
+        private void ToggleButton_Checked_10(object sender, RoutedEventArgs e) // No Tame
+        {
+            UpdateSelectedButton("NoTame", new Thickness(25, 0, 0, 130), new Thickness(25, 0, 0, 130),
+                "pack://application:,,,/ArkThreadripperLauncher;component/Resources/SOTF.jpg",
+                "steam://connect/27.33.160.254:27022");
         }
 
 
@@ -841,7 +395,6 @@ namespace Ark_Threadripper_Launcher
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -893,285 +446,6 @@ namespace Ark_Threadripper_Launcher
                 buttonPressed3 = false;
             }
         }
-        private void Button_Click_19(object sender, RoutedEventArgs e) //Color Menu
-        {
-            if (buttonPressed2 == 1)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Red"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                buttonPressed2 = 2;
-                AutoUpdateCheck.Foreground = Brushes.Red;
-                MainPlayButton.Background = Brushes.Red;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 2)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Green"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                buttonPressed2 = 3;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#548E19")); ;
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#548E19")); ;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 3)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Blue"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1585B5"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1585B5"));
-                buttonPressed2 = 4;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 4)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Purple"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#574EB9"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#574EB9"));
-                buttonPressed2 = 5;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 5)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Orange"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CF5A07"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CF5A07"));
-                buttonPressed2 = 6;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 6)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Lime"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8AA407"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8AA407"));
-                buttonPressed2 = 7;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 7)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Emerald"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#077507"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#077507"));
-                buttonPressed2 = 8;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 8)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Teal"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#07908E"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#07908E"));
-                buttonPressed2 = 9;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 9)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Cyan"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1D88BC"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#1D88BC"));
-                buttonPressed2 = 10;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 10)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Cobalt"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#0747C6"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#0747C6"));
-                buttonPressed2 = 11;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 11)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Indigo"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5C07D3"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5C07D3"));
-                buttonPressed2 = 12;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 12)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Violet"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8F07D3"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#8F07D3"));
-                buttonPressed2 = 13;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 13)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Pink"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CA62AD"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#CA62AD"));
-                buttonPressed2 = 14;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 14)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Magenta"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#B40763"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#B40763"));
-                buttonPressed2 = 15;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 15)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Crimson"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#890725"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#890725"));
-                buttonPressed2 = 16;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 16)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Amber"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#C7890F"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#C7890F"));
-                buttonPressed2 = 17;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 17)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Yellow"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#D2B90C"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#D2B90C"));
-                buttonPressed2 = 18;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 18)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Brown"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#6F4F2A"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#6F4F2A"));
-                buttonPressed2 = 19;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 19)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Olive"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5E7357"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#5E7357"));
-                buttonPressed2 = 20;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 20)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Steel"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#576573"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#576573"));
-                buttonPressed2 = 21;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 21)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Mauve"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#655475"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#655475"));
-                buttonPressed2 = 22;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 22)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Taupe"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#736845"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#736845"));
-                buttonPressed2 = 23;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-            if (buttonPressed2 == 23)
-            {
-                ThemeManager.ChangeAppStyle(Application.Current,
-                                             ThemeManager.GetAccent("Sienna"),
-                                             ThemeManager.GetAppTheme("BaseDark")); ;
-                AutoUpdateCheck.Foreground = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#87492B"));
-                MainPlayButton.Background = new System.Windows.Media.SolidColorBrush((Color)ColorConverter.ConvertFromString("#87492B"));
-                buttonPressed2 = 1;
-                Properties.Settings.Default.buttonPressed2 = buttonPressed2;
-                Properties.Settings.Default.Save();
-                return;
-            }
-        }
 
         private void Button_Click_16(object sender, RoutedEventArgs e) //LoginAndRegister
         {
@@ -1192,6 +466,18 @@ namespace Ark_Threadripper_Launcher
             Launcher.LaunchWebsite("http://yukitsuki.com/?p=forum");
             buttonPressed3 = false;
             DownList.Visibility = Visibility.Collapsed;
+        }
+
+        private void Button_Click_19(object sender, RoutedEventArgs e) // Color Menu
+        {
+            ApplyTheme(buttonPressed2);
+
+            // Update buttonPressed2 for next color in sequence
+            buttonPressed2 = buttonPressed2 == 23 ? 1 : buttonPressed2 + 1;
+
+            // Save the new buttonPressed2 value in the settings
+            Properties.Settings.Default.buttonPressed2 = buttonPressed2;
+            Properties.Settings.Default.Save();
         }
 
         private void ServerRatesExit_Click(object sender, RoutedEventArgs e)
